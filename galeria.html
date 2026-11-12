@@ -5,58 +5,26 @@
 <title>Galería</title>
 
 <style>
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#fff5e4;
-}
-
-header{
-    background:linear-gradient(90deg,#ff7b54,#ffb26b,#ffd56f);
-    color:white;
-    text-align:center;
-    padding:35px;
-}
-
-nav{
-    background:#ff914d;
-    padding:15px;
-    text-align:center;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:10px;
-    padding:10px 20px;
-    background:#ffb26b;
-    border-radius:25px;
-}
-
-nav a:hover{
-    background:white;
-    color:#ff914d;
-}
-
 .galeria{
-    text-align:center;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
     padding:30px;
 }
 
 .galeria img{
-    width:300px;
-    height:220px;
-    margin:15px;
-    border:8px solid white;
+    width:320px;
+    height:250px;
+    object-fit:cover;
+    border:6px solid white;
     border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.3);
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+    transition:0.3s;
 }
 
-footer{
-    background:#ff914d;
-    color:white;
-    text-align:center;
-    padding:15px;
+.galeria img:hover{
+    transform:scale(1.05);
 }
 </style>
 
