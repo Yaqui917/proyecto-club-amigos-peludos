@@ -33,17 +33,20 @@
         nav{
     background:#ff914d;
     padding:15px;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
 }
 
-nav a{
-    color:white;
+.nav-menu{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.nav-menu a{
     text-decoration:none;
+    color:white;
     background:#ffb26b;
-    padding:10px 20px;
+    padding:12px 20px;
     border-radius:25px;
     font-weight:bold;
 }
@@ -108,13 +111,15 @@ img{
     </header>
 
     <nav>
+    <div class="nav-menu">
         <a href="index.html">🏠 Inicio</a>
         <a href="mascotas.html">🐾 Mascotas</a>
         <a href="galeria.html">📸 Galería</a>
         <a href="cuidados.html">❤️ Cuidados</a>
         <a href="eventos.html">🎉 Eventos</a>
         <a href="contacto.html">📩 Contacto</a>
-    </nav>
+    </div>
+</nav>
 
     <section class="principal">
         <img src="C:\Users\yaque\OneDrive\Documentos\GitHub\proyecto\mascotas.avif" alt="Mascotas felices">
