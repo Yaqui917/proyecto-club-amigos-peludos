@@ -30,80 +30,76 @@
             font-size: 22px;
         }
 
-        nav{
-    background:#ff914d;
-    padding:15px;
-}
+        nav {
+            background: #ff914d;
+            text-align: center;
+            padding: 15px;
+        }
 
-.nav-menu{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 8px;
+            padding: 10px 20px;
+            background: #ffb26b;
+            border-radius: 25px;
+            font-weight: bold;
+        }
 
-.nav-menu a{
-    text-decoration:none;
-    color:white;
-    background:#ffb26b;
-    padding:12px 20px;
-    border-radius:25px;
-    font-weight:bold;
-}
+        nav a:hover {
+            background: white;
+            color: #ff914d;
+        }
 
-.principal{
-    text-align:center;
-    background:#f5f5f5;
-}
+        .principal {
+            text-align: center;
+            padding: 40px;
+        }
 
-.principal img{
-    width:100%;
-    max-width:900px;
-    height:auto;
-}
+        .principal img {
+            width: 70%;
+            max-width: 700px;
+            border-radius: 20px;
+            border: 8px solid white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
 
-        @media screen and (max-width:768px){
+        .bienvenida {
+            width: 80%;
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
 
-    header{
-        padding:30px 15px;
-    }
+        .bienvenida h2 {
+            color: #ff914d;
+        }
 
-    header h1{
-        font-size:2.2rem;
-    }
+        .boton {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: #ff914d;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        }
 
-    header p{
-        font-size:1.3rem;
-    }
+        .boton:hover {
+            background: #ff7b54;
+        }
 
-    nav{
-        flex-direction:column;
-        align-items:center;
-    }
-
-    nav a{
-        width:80%;
-        text-align:center;
-    }
-
-    .bienvenida{
-        width:90%;
-        padding:20px;
-    }
-
-    .principal img{
-        width:95%;
-    }
-
-    .tarjeta{
-        width:90%;
-        margin:15px auto;
-    }
-
-    form{
-        width:90%;
-    }
-}
+        footer {
+            background: #ff914d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
     </style>
 
 </head>
