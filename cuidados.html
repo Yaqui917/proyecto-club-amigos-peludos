@@ -39,20 +39,48 @@ nav{
     padding:10px 20px;
     border-radius:25px;
 }
+@media screen and (max-width:768px){
 
+    header{
+        padding:25px 15px;
+    }
+
+    header h1{
+        font-size:2rem;
+    }
+
+    header p{
+        font-size:1rem;
+    }
+
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:8px;
+    }
+
+    nav a{
+        font-size:0.9rem;
+        padding:10px 15px;
+    }
+
+    .tarjeta,
+    .evento,
+    .bienvenida,
+    form{
+        width:90%;
+        max-width:none;
+    }
+
+    img{
+        max-width:100%;
+        height:auto;
+    }
+}
 .contenedor{
     text-align:center;
     padding:30px;
-}
-
-.tarjeta{
-    background:white;
-    width:300px;
-    display:inline-block;
-    margin:15px;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
 h2{
