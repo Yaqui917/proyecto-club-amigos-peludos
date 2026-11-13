@@ -1,10 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🎉 Eventos | Club Amigos Peludos</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#fff5e4;
+}
+
+header{
+    background:linear-gradient(90deg,#ff7b54,#ffb26b,#ffd56f);
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+header h1{
+    margin:0;
+    font-size:2.5rem;
+}
+
+nav{
+    background:#ff914d;
+    padding:15px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    background:#ffb26b;
+    padding:12px 20px;
+    border-radius:25px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    background:white;
+    color:#ff914d;
+}
+
+.contenedor{
+    padding:30px;
+}
+
+.evento{
+    background:white;
+    width:80%;
+    max-width:800px;
+    margin:20px auto;
+    padding:20px;
+    border-left:8px solid #ff914d;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.evento h2{
+    margin-top: 0;
+}
+
+.evento h2 a{
+    color:#ff914d;
+    text-decoration:none;
+    transition: 0.3s;
+}
+
+.evento h2 a:hover{
+    color:#ff7b54;
+    text-decoration: underline;
+}
+
+.evento p{
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Estilos para el botón de inscripción */
+.btn-evento{
+    display: inline-block;
+    margin-top: 15px;
+    background: #ffb26b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-evento:hover{
+    background: #ff7b54;
+}
+
+footer{
+    background:#ff914d;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+
+@media (max-width:768px){
+
+    header h1{
+        font-size:2rem;
+    }
+
+    nav{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    nav a{
+        width:85%;
+        text-align:center;
+    }
+
+    .evento{
+        width:90%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>🎉 Eventos del Club</h1>
+    <p>Actividades para convivir con nuestras mascotas</p>
+</header>
+
+<nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="mascotas.html">🐾 Mascotas</a>
+    <a href="galeria.html">📸 Galería</a>
+    <a href="cuidados.html">❤️ Cuidados</a>
+    <a href="eventos.html">🎉 Eventos</a>
+    <a href="contacto.html">📩 Contacto</a>
+</nav>
+
 <section class="contenedor">
 
     <div class="evento">
         <h2>
-            <a href="paseos.html" style="color: #ff914d; text-decoration: none;">
-                🐕 Paseo Canino ➔
-            </a>
+            <a href="paseos.html">🐕 Paseo Canino ➔</a>
         </h2>
         <p>
             Una actividad recreativa para que los perros y sus dueños
@@ -16,9 +170,7 @@
 
     <div class="evento">
         <h2>
-            <a href="concursos.html" style="color: #ff914d; text-decoration: none;">
-                🏆 Concurso de Mascotas ➔
-            </a>
+            <a href="concursos.html">🏆 Concurso de Mascotas ➔</a>
         </h2>
         <p>
             Premiaremos a las mascotas más simpáticas, obedientes
@@ -30,9 +182,7 @@
 
     <div class="evento">
         <h2>
-            <a href="adopcion.html" style="color: #ff914d; text-decoration: none;">
-                🐾 Jornada de Adopción ➔
-            </a>
+            <a href="adopcion.html">🐾 Jornada de Adopción ➔</a>
         </h2>
         <p>
             Ayudamos a encontrar un hogar lleno de amor para animales
@@ -43,3 +193,10 @@
     </div>
 
 </section>
+
+<footer>
+    🐾 Club Amigos Peludos | 2026
+</footer>
+
+</body>
+</html>
