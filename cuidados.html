@@ -4,11 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>❤️ Cuidados | Club Amigos Peludos</title>
 
 <style>
-
 body{
     margin:0;
     font-family:Arial,sans-serif;
@@ -41,10 +39,10 @@ nav{
 }
 
 nav a{
-    text-decoration:none;
     color:white;
+    text-decoration:none;
     background:#ffb26b;
-    padding:12px 22px;
+    padding:12px 20px;
     border-radius:25px;
     font-weight:bold;
     transition:0.3s;
@@ -55,35 +53,103 @@ nav a:hover{
     color:#ff914d;
 }
 
-.contenedor{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:25px;
-    padding:40px;
-}
-
-.tarjeta{
-    background:white;
-    width:300px;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
+.instruccion{
     text-align:center;
-    transition:0.3s;
+    color:#555;
+    margin:25px 15px 5px;
+    font-size:1.05rem;
 }
 
-.tarjeta:hover{
-    transform:translateY(-5px);
+.contenedor{
+    padding:20px 30px;
 }
 
-.tarjeta h2{
+.cuidado-card{
+    background:white;
+    width:80%;
+    max-width:800px;
+    margin:20px auto;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    text-align:center;
+    cursor:pointer;
+    transition:transform 0.2s, box-shadow 0.2s;
+    border: 2px solid transparent;
+}
+
+.cuidado-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+    border-color:#ffb26b;
+}
+
+.cuidado-card h2{
+    color:#ff914d;
+    margin-top:0;
+}
+
+.cuidado-card p{
+    color:#555;
+    line-height:1.5;
+}
+
+.etiqueta-clic{
+    display:inline-block;
+    background:#fff5e4;
+    color:#ff7b54;
+    padding:5px 12px;
+    border-radius:15px;
+    font-size:13px;
+    font-weight:bold;
+    margin-top:5px;
+}
+
+/* Caja donde aparece el consejo aleatorio */
+.consejo-extra{
+    display:none;
+    margin-top:15px;
+    padding:12px 15px;
+    background:#fff5e4;
+    border-left:5px solid #ff914d;
+    border-radius:8px;
+    color:#333;
+    font-weight:bold;
+    text-align:left;
+}
+
+/* Estilos para Preguntas Frecuentes (FAQs) */
+.faq-seccion{
+    width:80%;
+    max-width:800px;
+    margin:40px auto 20px;
+}
+
+.faq-seccion h2{
+    text-align:center;
     color:#ff914d;
 }
 
-.tarjeta p{
+details{
+    background:white;
+    margin:12px 0;
+    padding:15px 20px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+summary{
+    font-weight:bold;
+    color:#ff914d;
+    cursor:pointer;
+    font-size:1.05rem;
+}
+
+details p{
     color:#555;
-    line-height:1.6;
+    margin-top:10px;
+    margin-bottom:0;
+    line-height:1.5;
 }
 
 footer{
@@ -91,32 +157,16 @@ footer{
     color:white;
     text-align:center;
     padding:15px;
+    margin-top:30px;
 }
 
 @media (max-width:768px){
-
-    header h1{
-        font-size:2rem;
-    }
-
-    nav{
-        flex-direction:column;
-        align-items:center;
-    }
-
-    nav a{
-        width:85%;
-        text-align:center;
-    }
-
-    .tarjeta{
-        width:90%;
-    }
-
+    header h1{ font-size:2rem; }
+    nav{ flex-direction:column; align-items:center; }
+    nav a{ width:85%; text-align:center; }
+    .cuidado-card, .faq-seccion{ width:90%; }
 }
-
 </style>
-
 </head>
 
 <body>
@@ -135,71 +185,127 @@ footer{
     <a href="contacto.html">📩 Contacto</a>
 </nav>
 
+<p class="instruccion">💡 <strong>Tip interactivo:</strong> Haz clic sobre cualquier tarjeta para descubrir un consejo rápido al azar.</p>
+
 <section class="contenedor">
 
-    <div class="tarjeta">
+    <div class="cuidado-card" onclick="mostrarConsejo('alimentacion', this)">
         <h2>🥩 Alimentación</h2>
-        <p>
-            Ofrece una dieta equilibrada y adecuada para la especie,
-            edad y tamaño de tu mascota. El agua limpia debe estar
-            disponible en todo momento.
-        </p>
+        <p>Ofrece una dieta equilibrada y adecuada para la especie, edad y tamaño de tu mascota. El agua limpia debe estar disponible en todo momento.</p>
+        <span class="etiqueta-clic">🎲 Clic para un consejo extra</span>
+        <div class="consejo-extra"></div>
     </div>
 
-    <div class="tarjeta">
+    <div class="cuidado-card" onclick="mostrarConsejo('salud', this)">
         <h2>🩺 Salud</h2>
-        <p>
-            Lleva a tu mascota al veterinario periódicamente para
-            vacunas, revisiones y prevención de enfermedades.
-        </p>
+        <p>Lleva a tu mascota al veterinario periódicamente para vacunas, revisiones y prevención de enfermedades.</p>
+        <span class="etiqueta-clic">🎲 Clic para un consejo extra</span>
+        <div class="consejo-extra"></div>
     </div>
 
-    <div class="tarjeta">
+    <div class="cuidado-card" onclick="mostrarConsejo('ejercicio', this)">
         <h2>🎾 Ejercicio</h2>
-        <p>
-            El juego y la actividad física ayudan a mantener una buena
-            condición física y reducen el estrés.
-        </p>
+        <p>El juego y la actividad física ayudan a mantener una buena condición física y reducen el estrés.</p>
+        <span class="etiqueta-clic">🎲 Clic para un consejo extra</span>
+        <div class="consejo-extra"></div>
     </div>
 
-    <div class="tarjeta">
+    <div class="cuidado-card" onclick="mostrarConsejo('higiene', this)">
         <h2>🛁 Higiene</h2>
-        <p>
-            Mantén limpios el pelaje, las uñas y el espacio donde vive
-            tu mascota para evitar enfermedades.
-        </p>
+        <p>Mantén limpios el pelaje, las uñas y el espacio donde vive tu mascota para evitar enfermedades.</p>
+        <span class="etiqueta-clic">🎲 Clic para un consejo extra</span>
+        <div class="consejo-extra"></div>
     </div>
 
-    <div class="tarjeta">
+    <div class="cuidado-card" onclick="mostrarConsejo('carino', this)">
         <h2>💖 Cariño y Atención</h2>
-        <p>
-            Las mascotas necesitan afecto, tiempo y compañía para
-            desarrollarse de manera saludable y feliz.
-        </p>
+        <p>Las mascotas necesitan afecto, tiempo y compañía para desarrollarse de manera saludable y feliz.</p>
+        <span class="etiqueta-clic">🎲 Clic para un consejo extra</span>
+        <div class="consejo-extra"></div>
     </div>
 
-    <div class="tarjeta">
-        <h2>🏠 Entorno Seguro</h2>
-        <p>
-            Proporciona un lugar cómodo y seguro donde tu mascota pueda
-            descansar y sentirse protegida.
-        </p>
+    <div class="cuidado-card" onclick="mostrarConsejo('entorno', this)">
+        <h2>🏡 Entorno Seguro</h2>
+        <p>Proporciona un lugar cómodo y seguro donde tu mascota pueda descansar y sentirse protegida.</p>
+        <span class="etiqueta-clic">🎲 Clic para un consejo extra</span>
+        <div class="consejo-extra"></div>
     </div>
 
-    </div>
-<a href="https://www.petdaily.org/" target="_blank">
-    Visitar PET DAILY para más consejos
-</a>
+    <!-- Sección de Preguntas Frecuentes -->
+    <div class="faq-seccion">
+        <h2>❓ Preguntas Frecuentes</h2>
 
-<a href="https://www.petco.com.mx/" target="_blank">
-    Consejos sobre mascotas
-</a>
+        <details>
+            <summary>¿Qué alimentos son prohibidos para los perros y gatos?</summary>
+            <p>El chocolate, la cebolla, el ajo, las uvas, las pasas y el aguacate son tóxicos para ellos. Nunca los incluyas en su dieta.</p>
+        </details>
+
+        <details>
+            <summary>¿Cada cuánto tiempo debo bañar a mi perro?</summary>
+            <p>Por lo general, una vez cada 3 o 4 semanas es suficiente para no eliminar los aceites naturales que protegen su piel.</p>
+        </details>
+
+        <details>
+            <summary>¿Cómo puedo ayudar a mi mascota si le teme a los ruidos fuertes?</summary>
+            <p>Prepárale un refugio tranquilo en una habitación interior con sus juguetes favoritos y cierra cortinas o ventanas para amortiguar el sonido.</p>
+        </details>
+    </div>
 
 </section>
 
 <footer>
     🐾 Club Amigos Peludos | 2026
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const bancoConsejos = {
+        alimentacion: [
+            "Lava su plato de comida y agua todos los días para evitar bacterias.",
+            "Evita darles huesos cocidos, ya que pueden astillarse y lastimar su estómago.",
+            "Si cambias de marca de croquetas, hazlo poco a poco durante una semana mezclando ambas."
+        ],
+        salud: [
+            "Revisa sus orejas una vez a la semana para asegurarte de que estén limpias y sin mal olor.",
+            "Desparasita a tu mascota cada 3 o 4 meses según lo que indique su veterinario.",
+            "Cepillar sus dientes con pasta especial para mascotas previene el sarro y el mal aliento."
+        ],
+        ejercicio: [
+            "Los juegos de olfato (esconder premios en casa) cansan su mente tanto como una caminata.",
+            "En días muy calurosos, saca a pasear a tu perro temprano por la mañana o al anochecer para no quemar sus patitas.",
+            "Los gatos también necesitan ejercicio: usa varitas con plumas o pelotas por 15 minutos al día."
+        ],
+        higiene: [
+            "Cepilla su pelo antes de bañarlo para deshacer nudos y retirar el pelo muerto.",
+            "Seca muy bien sus orejas después del baño para prevenir infecciones por humedad.",
+            "Limpia el arenero de los gatos todos los días para mantenerlos cómodos y evitar malos olores."
+        ],
+        carino: [
+            "Premia sus buenas conductas con caricias o palabras amables; el refuerzo positivo fortalece su vínculo.",
+            "Respeta su espacio cuando esté durmiendo o comiendo para que siempre se sienta en confianza.",
+            "Hablarle con un tono de voz suave ayuda a calmar a mascotas nerviosas o recién adoptadas."
+        ],
+        entorno: [
+            "Guarda productos de limpieza, medicamentos y cables eléctricos fuera de su alcance.",
+            "Asegúrate de que siempre lleve una placa de identificación con tu número de teléfono.",
+            "Coloca su cama lejos de corrientes de aire frío o del sol directo."
+        ]
+    };
+
+    function mostrarConsejo(categoria, tarjeta) {
+        const lista = bancoConsejos[categoria];
+        const caja = tarjeta.querySelector('.consejo-extra');
+        
+        // Elegir un consejo al azar distinto al que ya se muestra (si es posible)
+        let nuevoConsejo;
+        do {
+            const indice = Math.floor(Math.random() * lista.length);
+            nuevoConsejo = "✨ Consejo: " + lista[indice];
+        } while (lista.length > 1 && caja.textContent === nuevoConsejo);
+
+        caja.textContent = nuevoConsejo;
+        caja.style.display = "block";
+    }
+</script>
+
 </body>
 </html>
