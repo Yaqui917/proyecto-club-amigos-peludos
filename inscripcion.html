@@ -146,7 +146,6 @@ footer{
     <p>Asegura tu lugar y el de tu mascota en nuestras actividades</p>
 </header>
 
-<!-- Nota: Inscripción NO está en este menú, solo se llega desde los botones -->
 <nav>
     <a href="index.html">🏠 Inicio</a>
     <a href="mascotas.html">🐾 Mascotas</a>
@@ -162,6 +161,9 @@ footer{
 </div>
 
 <form action="https://formspree.io/f/xoedvkev" method="POST">
+
+    <!-- Redirección a la página de gracias -->
+    <input type="hidden" name="_next" value="https://yaqui917.github.io/proyecto-club-amigos-peludos/gracias.html">
 
     <label>Tu nombre completo</label>
     <input type="text" name="nombre_dueno" placeholder="Escribe tu nombre" required>
@@ -195,7 +197,6 @@ footer{
     🐾 Club Amigos Peludos | 2026
 </footer>
 
-<!-- Script para seleccionar automáticamente el evento según el botón presionado -->
 <script>
     const parametros = new URLSearchParams(window.location.search);
     const eventoElegido = parametros.get('evento');
