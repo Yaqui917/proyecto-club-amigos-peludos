@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐾 Adopciones | Club Amigos Peludos</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#fff5e4;
+}
+
+header{
+    background:linear-gradient(90deg,#ff7b54,#ffb26b,#ffd56f);
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+header h1{
+    margin:0;
+    font-size:2.5rem;
+}
+
+header p{
+    font-size:1.2rem;
+}
+
+nav{
+    background:#ff914d;
+    padding:15px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    background:#ffb26b;
+    padding:12px 20px;
+    border-radius:25px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    background:white;
+    color:#ff914d;
+}
+
+.contenedor{
+    padding:30px;
+}
+
+.seccion-card{
+    background:white;
+    width:80%;
+    max-width:800px;
+    margin:20px auto;
+    padding:20px;
+    border-left:8px solid #ff914d;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.seccion-card h2{
+    color:#ff914d;
+    margin-top:0;
+}
+
+.seccion-card p{
+    color:#555;
+    line-height:1.5;
+}
+
+.btn-evento{
+    display: inline-block;
+    margin-top: 15px;
+    background: #ffb26b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-evento:hover{
+    background: #ff7b54;
+}
+
+.volver{
+    display: block;
+    text-align: center;
+    margin: 30px;
+    color: #ff914d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer{
+    background:#ff914d;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+
+@media (max-width:768px){
+    header h1{ font-size:2rem; }
+    nav{ flex-direction:column; align-items:center; }
+    nav a{ width:85%; text-align:center; }
+    .seccion-card{ width:90%; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🐾 Jornadas de Adopción por Zona</h1>
+    <p>Encuentra tu centro de adopción más cercano y cambia una vida</p>
+</header>
+
+<nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="mascotas.html">🐾 Mascotas</a>
+    <a href="galeria.html">📸 Galería</a>
+    <a href="cuidados.html">❤️ Cuidados</a>
+    <a href="eventos.html">🎉 Eventos</a>
+    <a href="contacto.html">📩 Contacto</a>
+</nav>
+
+<section class="contenedor">
+
+    <div class="seccion-card">
+        <h2>📍 Zona Norte - Parque Central</h2>
+        <p><strong>Horario:</strong> 10:00 AM - 2:00 PM</p>
+        <p>Ven a conocer perritos y gatitos rescatados que buscan una familia responsable.</p>
+        <a href="inscripcion.html?evento=Jornada%20de%20Adopción" class="btn-evento">🐾 Registrarme como adoptante</a>
+    </div>
+
+    <div class="seccion-card">
+        <h2>📍 Zona Sur - Plaza Comercial</h2>
+        <p><strong>Horario:</strong> 12:00 PM - 5:00 PM</p>
+        <p>Módulos de adopción temporal y entrega de solicitudes para futuros dueños.</p>
+        <a href="inscripcion.html?evento=Jornada%20de%20Adopción" class="btn-evento">🐾 Registrarme como adoptante</a>
+    </div>
+
+    <a href="eventos.html" class="volver">← Volver a la página de Eventos</a>
+
+</section>
+
+<footer>
+    🐾 Club Amigos Peludos | 2026
+</footer>
+
+</body>
+</html>
