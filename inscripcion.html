@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎟️ Inscripción a Eventos | Club Amigos Peludos</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#fff5e4;
+}
+
+header{
+    background:linear-gradient(90deg,#ff7b54,#ffb26b,#ffd56f);
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+header h1{
+    margin:0;
+    font-size:2.5rem;
+}
+
+header p{
+    font-size:1.2rem;
+}
+
+nav{
+    background:#ff914d;
+    padding:15px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    background:#ffb26b;
+    padding:12px 22px;
+    border-radius:25px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    background:white;
+    color:#ff914d;
+}
+
+form{
+    width:90%;
+    max-width:600px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    box-sizing:border-box;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+    font-weight:bold;
+    color:#555;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:2px solid #ffb26b;
+    border-radius:10px;
+    box-sizing:border-box;
+    font-size:16px;
+    background:white;
+    color:#333;
+}
+
+textarea{
+    resize:vertical;
+}
+
+button{
+    margin-top:20px;
+    background:#ff914d;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:25px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    width:100%;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ff7b54;
+}
+
+.info{
+    text-align:center;
+    margin:20px;
+    color:#555;
+}
+
+.volver{
+    display:block;
+    text-align:center;
+    margin-top:15px;
+    color:#ff914d;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+footer{
+    background:#ff914d;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+
+@media (max-width:768px){
+    header h1{ font-size:2rem; }
+    nav{ flex-direction:column; align-items:center; }
+    nav a{ width:85%; text-align:center; }
+    form{ width:95%; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎟️ Registro de Eventos</h1>
+    <p>Asegura tu lugar y el de tu mascota en nuestras actividades</p>
+</header>
+
+<!-- Nota: Inscripción NO está en este menú, solo se llega desde los botones -->
+<nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="mascotas.html">🐾 Mascotas</a>
+    <a href="galeria.html">📸 Galería</a>
+    <a href="cuidados.html">❤️ Cuidados</a>
+    <a href="eventos.html">🎉 Eventos</a>
+    <a href="contacto.html">📩 Contacto</a>
+</nav>
+
+<div class="info">
+    <h2>🐾 Formulario de Inscripción</h2>
+    <p>Elige el evento al que asistirás y déjanos los datos de tu amigo peludo.</p>
+</div>
+
+<form action="https://formspree.io/f/xoedvkev" method="POST">
+
+    <label>Tu nombre completo</label>
+    <input type="text" name="nombre_dueno" placeholder="Escribe tu nombre" required>
+
+    <label>Correo electrónico</label>
+    <input type="email" name="email" placeholder="correo@ejemplo.com" required>
+
+    <label>Nombre y especie/raza de tu mascota</label>
+    <input type="text" name="datos_mascota" placeholder="Ej. Max - Perro Mestizo (o 'Aún no tengo' si vas a adoptar)" required>
+
+    <label>Selecciona el evento al que asistirás</label>
+    <select id="selector-evento" name="evento" required>
+        <option value="" disabled selected>-- Elige una actividad --</option>
+        <option value="Paseo Canino">🐕 Paseo Canino (15 de noviembre)</option>
+        <option value="Concurso de Mascotas">🏆 Concurso de Mascotas (20 de noviembre)</option>
+        <option value="Jornada de Adopción">🐾 Jornada de Adopción (28 de noviembre)</option>
+    </select>
+
+    <label>Notas adicionales (opcional)</label>
+    <textarea name="notas" rows="3" placeholder="¿Algún cuidado especial o zona a la que asistirás?"></textarea>
+
+    <button type="submit">
+        🎉 Confirmar inscripción
+    </button>
+
+    <a href="eventos.html" class="volver">← Volver a Eventos</a>
+
+</form>
+
+<footer>
+    🐾 Club Amigos Peludos | 2026
+</footer>
+
+<!-- Script para seleccionar automáticamente el evento según el botón presionado -->
+<script>
+    const parametros = new URLSearchParams(window.location.search);
+    const eventoElegido = parametros.get('evento');
+    if (eventoElegido) {
+        document.getElementById('selector-evento').value = eventoElegido;
+    }
+</script>
+
+</body>
+</html>
