@@ -1,16 +1,131 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🐕 Paseos Caninos | Club Amigos Peludos</title>
-<!-- Puedes copiar los mismos <style> que usas en las demás páginas -->
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#fff5e4;
+}
+
+header{
+    background:linear-gradient(90deg,#ff7b54,#ffb26b,#ffd56f);
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+header h1{
+    margin:0;
+    font-size:2.5rem;
+}
+
+header p{
+    font-size:1.2rem;
+}
+
+nav{
+    background:#ff914d;
+    padding:15px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    background:#ffb26b;
+    padding:12px 20px;
+    border-radius:25px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    background:white;
+    color:#ff914d;
+}
+
+.contenedor{
+    padding:30px;
+}
+
+.seccion-card{
+    background:white;
+    width:80%;
+    max-width:800px;
+    margin:20px auto;
+    padding:20px;
+    border-left:8px solid #ff914d;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.seccion-card h2{
+    color:#ff914d;
+    margin-top:0;
+}
+
+.seccion-card p{
+    color:#555;
+    line-height:1.5;
+}
+
+.btn-evento{
+    display: inline-block;
+    margin-top: 15px;
+    background: #ffb26b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-evento:hover{
+    background: #ff7b54;
+}
+
+.volver{
+    display: block;
+    text-align: center;
+    margin: 30px;
+    color: #ff914d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer{
+    background:#ff914d;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+
+@media (max-width:768px){
+    header h1{ font-size:2rem; }
+    nav{ flex-direction:column; align-items:center; }
+    nav a{ width:85%; text-align:center; }
+    .seccion-card{ width:90%; }
+}
+</style>
 </head>
+
 <body>
 
 <header>
     <h1>🐕 Rutas de Paseo Canino</h1>
-    <p>Conoce los puntos de reunión y horarios</p>
+    <p>Conoce los puntos de reunión, horarios y rutas disponibles</p>
 </header>
 
 <nav>
@@ -23,13 +138,23 @@
 </nav>
 
 <section class="contenedor">
-    <div class="evento">
+
+    <div class="seccion-card">
         <h2>📍 Ruta Parque Central</h2>
         <p><strong>Hora:</strong> 9:00 AM</p>
-        <p>Punto de partida frente a la fuente principal. Recorrido de 2 kilómetros apto para todas las razas.</p>
-        <!-- Opcional: También puedes poner un botón de inscripción aquí -->
+        <p>Punto de partida frente a la fuente principal. Recorrido de 2 kilómetros apto para todas las razas y niveles de energía.</p>
         <a href="inscripcion.html?evento=Paseo%20Canino" class="btn-evento">🐾 Inscribirme a este paseo</a>
     </div>
+
+    <div class="seccion-card">
+        <h2>📍 Ruta Sendero del Río</h2>
+        <p><strong>Hora:</strong> 10:30 AM</p>
+        <p>Una caminata más boscosa y fresca junto a la ribera. Ideal para perritos enérgicos que disfrutan de la naturaleza.</p>
+        <a href="inscripcion.html?evento=Paseo%20Canino" class="btn-evento">🐾 Inscribirme a este paseo</a>
+    </div>
+
+    <a href="eventos.html" class="volver">← Volver a la página de Eventos</a>
+
 </section>
 
 <footer>
