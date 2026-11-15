@@ -269,32 +269,45 @@ Nuestro objetivo es fomentar el bienestar animal y crear una comunidad donde cad
 
 </footer>
 
-<script>
+
+    <script>
     function lanzarMascotas() {
-        // Emojis variados de perritos, gatitos, conejos, patitas y huesos
         const mascotas = ["🐶", "🐱", "🐰", "🐕", "🐈", "🐾", "🦴", "🦜", "🐹"];
-        for (let i = 0; i < 35; i++) {
-            let sticker = document.createElement("div");
-            sticker.textContent = mascotas[Math.floor(Math.random() * mascotas.length)];
-            sticker.style.position = "fixed";
-            sticker.style.left = Math.random() * window.innerWidth + "px";
-            sticker.style.top = "-50px";
-            sticker.style.fontSize = (Math.random() * 35 + 22) + "px";
-            sticker.style.zIndex = "9999";
-            sticker.style.transition = "transform 3.5s linear, top 3.5s linear";
-            
-            document.body.appendChild(sticker);
-
-            // Efecto de caída y rotación
+        
+        // Creamos un ciclo que lance los stickers escalonados (uno tras otro)
+        for (let i = 0; i < 25; i++) {
             setTimeout(() => {
-                sticker.style.top = window.innerHeight + "50px";
-                sticker.style.transform = "rotate(" + (Math.random() * 360) + "deg)";
-            }, 100);
+                let sticker = document.createElement("div");
+                sticker.textContent = mascotas[Math.floor(Math.random() * mascotas.length)];
+                sticker.style.position = "fixed";
+                
+                // Posición horizontal aleatoria en la pantalla
+                sticker.style.left = Math.random() * window.innerWidth + "px";
+                sticker.style.top = "-50px";
+                
+                // Tamaños variados para dar profundidad
+                sticker.style.fontSize = (Math.random() * 30 + 20) + "px";
+                sticker.style.zIndex = "9999";
+                
+                // Hacemos que la caída sea más lenta (entre 3 y 6 segundos) y suave
+                let duracion = Math.random() * 3 + 3;
+                sticker.style.transition = `top ${duracion}s linear, transform ${duracion}s ease-in-out`;
+                
+                document.body.appendChild(sticker);
 
-            // Limpiar los elementos de la pantalla
-            setTimeout(() => {
-                sticker.remove();
-            }, 3800);
+                // Forzar al navegador a procesar la posición inicial antes de moverlos
+                setTimeout(() => {
+                    sticker.style.top = window.innerHeight + "60px";
+                    // Rotación aleatoria mientras caen
+                    sticker.style.transform = "rotate(" + (Math.random() * 720 - 360) + "deg)";
+                }, 50);
+
+                // Borrar el sticker del código cuando termine de caer para no saturar la página
+                setTimeout(() => {
+                    sticker.remove();
+                }, duracion * 1000);
+
+            }, i * 150); // Este número (150ms) controla qué tan separados van saliendo uno del otro
         }
     }
 </script>
