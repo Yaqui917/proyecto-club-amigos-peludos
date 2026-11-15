@@ -142,12 +142,9 @@ footer{
 
 <body>
 
-<header>
-
-<h1>🐾 CLUB AMIGOS PELUDOS 🐾</h1>
-
-<p>Donde cada huella cuenta una historia</p>
-
+<header onclick="lanzarMascotas()" style="cursor: pointer;" title="¡Haz clic aquí para una sorpresa!">
+    <h1>🐾 Club Amigos Peludos</h1>
+    <p>Donde cada huella cuenta una historia</p>
 </header>
 
 <nav>
@@ -268,40 +265,6 @@ Nuestro objetivo es fomentar el bienestar animal y crear una comunidad donde cad
 🐾 Club Amigos Peludos | Creado por Yaqueline © 2026
 
 </footer>
-<!-- Elemento secreto o botón oculto -->
-<div style="text-align: center; margin: 20px;">
-    <span onclick="lanzarPerritos()" style="cursor: pointer; font-size: 14px; color: #ff914d; font-weight: bold;">🐾 ¿Quieres una sorpresa secreta? Haz clic aquí</span>
-</div>
-
-<script>
-    function lanzarMascotas() {
-        const mascotas = ["🐶", "🐕", "🐩", "🐾", "🦴", "🐇", "🐁", "🦎", "🦀", "🦜", "🐎", "🐈‍⬛", "🐈", "🐱", "🐰", "🐭", "🐸", "🐢"];
-        for (let i = 0; i < 30; i++) {
-            let sticker = document.createElement("div");
-            sticker.textContent = mascotas[Math.floor(Math.random() * mascotas.length)];
-            sticker.style.position = "fixed";
-            sticker.style.left = Math.random() * window.innerWidth + "px";
-            sticker.style.top = "-50px";
-            sticker.style.fontSize = (Math.random() * 30 + 20) + "px";
-            sticker.style.zIndex = "9999";
-            sticker.style.transition = "transform 3s linear, top 3s linear";
-            
-            document.body.appendChild(sticker);
-
-            // Hacer que caigan
-            setTimeout(() => {
-                sticker.style.top = window.innerHeight + "50px";
-                sticker.style.transform = "rotate(" + (Math.random() * 360) + "deg)";
-            }, 100);
-
-            // Borrar el sticker después de que caiga
-            setTimeout(() => {
-                sticker.remove();
-            }, 3500);
-        }
-        alert("¡Sorpresa! Has desbloqueado el modo mascotas 🐾🎉");
-    }
-</script>
 
 </body>
 </html>
