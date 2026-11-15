@@ -266,5 +266,35 @@ Nuestro objetivo es fomentar el bienestar animal y crear una comunidad donde cad
 
 </footer>
 
+<script>
+    function lanzarMascotas() {
+        // Emojis variados de perritos, gatitos, conejos, patitas y huesos
+        const mascotas = ["🐶", "🐱", "🐰", "🐕", "🐈", "🐾", "🦴", "🦜", "🐹"];
+        for (let i = 0; i < 35; i++) {
+            let sticker = document.createElement("div");
+            sticker.textContent = mascotas[Math.floor(Math.random() * mascotas.length)];
+            sticker.style.position = "fixed";
+            sticker.style.left = Math.random() * window.innerWidth + "px";
+            sticker.style.top = "-50px";
+            sticker.style.fontSize = (Math.random() * 35 + 22) + "px";
+            sticker.style.zIndex = "9999";
+            sticker.style.transition = "transform 3.5s linear, top 3.5s linear";
+            
+            document.body.appendChild(sticker);
+
+            // Efecto de caída y rotación
+            setTimeout(() => {
+                sticker.style.top = window.innerHeight + "50px";
+                sticker.style.transform = "rotate(" + (Math.random() * 360) + "deg)";
+            }, 100);
+
+            // Limpiar los elementos de la pantalla
+            setTimeout(() => {
+                sticker.remove();
+            }, 3800);
+        }
+    }
+</script>
+
 </body>
 </html>
