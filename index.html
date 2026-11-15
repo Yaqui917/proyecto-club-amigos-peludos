@@ -209,6 +209,60 @@ Nuestro objetivo es fomentar el bienestar animal y crear una comunidad donde cad
     </div>
 
 </section>
+<!-- Sección del Test Interactivo -->
+<section style="background: white; width: 85%; max-width: 700px; margin: 40px auto; padding: 30px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,.15); text-align: center;">
+    <h2 style="color: #ff914d; margin-top: 0;">🐾 Test: ¿Qué mascota es ideal para ti?</h2>
+    <p style="color: #555;">Responde estas dos preguntas rápidas para descubrir a tu compañero perfecto:</p>
+
+    <div style="text-align: left; margin-top: 20px;">
+        <label style="font-weight: bold; color: #555; display: block; margin-bottom: 5px;">1. ¿Cómo prefieres pasar tu tiempo libre?</label>
+        <select id="pregunta1" style="width: 100%; padding: 10px; border: 2px solid #ffb26b; border-radius: 10px; font-size: 15px; margin-bottom: 15px;">
+            <option value="activo">Saliendo a caminar, correr o explorar parques</option>
+            <option value="tranquilo">Relajado en casa leyendo, viendo series o estudiando</option>
+            <option value="poco_espacio">Tengo poco tiempo o espacio, pero quiero compañía</option>
+        </select>
+
+        <label style="font-weight: bold; color: #555; display: block; margin-bottom: 5px;">2. ¿Qué nivel de atención puedes darle al día?</label>
+        <select id="pregunta2" style="width: 100%; padding: 10px; border: 2px solid #ffb26b; border-radius: 10px; font-size: 15px; margin-bottom: 20px;">
+            <option value="mucha">Mucho tiempo para jugar y entrenarlo</option>
+            <option value="moderada">Un rato al día para mimos y juegos cortos</option>
+            <option value="basica">Cuidados sencillos y limpieza de su espacio</option>
+        </select>
+    </div>
+
+    <button onclick="calcularMascota()" style="background: #ff914d; color: white; border: none; padding: 12px 25px; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s;">
+        ✨ Descubrir mi mascota ideal
+    </button>
+
+    <!-- Caja donde aparece el resultado -->
+    <div id="resultado-test" style="display: none; margin-top: 25px; padding: 20px; background: #fff5e4; border-left: 6px solid #ff914d; border-radius: 12px; text-align: left;">
+        <h3 id="titulo-resultado" style="color: #ff7b54; margin-top: 0;"></h3>
+        <p id="texto-resultado" style="color: #444; margin-bottom: 0; line-height: 1.5;"></p>
+    </div>
+</section>
+
+<script>
+    function calcularMascota() {
+        const p1 = document.getElementById('pregunta1').value;
+        const p2 = document.getElementById('pregunta2').value;
+        const caja = document.getElementById('resultado-test');
+        const titulo = document.getElementById('titulo-resultado');
+        const texto = document.getElementById('texto-resultado');
+
+        if (p1 === 'activo' && p2 === 'mucha') {
+            titulo.textContent = "🐕 ¡Tu compañero ideal es un Perro!";
+            texto.textContent = "Tienes la energía y el tiempo perfectos para un perro. Disfrutarán juntos de caminatas, juegos al aire libre y mucha lealtad.";
+        } else if (p1 === 'tranquilo' || p2 === 'moderada') {
+            titulo.textContent = "🐈 ¡Tu compañero ideal es un Gato!";
+            texto.textContent = "Los gatos son independientes, limpios y adoran las tardes tranquilas en casa. Te dará compañía sin exigir paseos diarios.";
+        } else {
+            titulo.textContent = "🐇 ¡Tu compañero ideal es un Conejo o Hámster!";
+            texto.textContent = "Si buscas una mascota tierna que se adapte a espacios pequeños y rutinas ocupadas, un pequeño mamífero será excelente para ti.";
+        }
+
+        caja.style.display = "block";
+    }
+</script>
 <footer>
 
 🐾 Club Amigos Peludos | Creado por Yaqueline © 2026
