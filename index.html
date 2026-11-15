@@ -290,7 +290,7 @@ Nuestro objetivo es fomentar el bienestar animal y crear una comunidad donde cad
                 sticker.style.zIndex = "9999";
                 
                 // Hacemos que la caída sea más lenta (entre 3 y 6 segundos) y suave
-                let duracion = Math.random() * 4 + 5;
+                let duracion = Math.random() * 5 + 8; // entre 8 y 13 segundos
                 sticker.style.transition = `top ${duracion}s linear, transform ${duracion}s ease-in-out`;
                 
                 document.body.appendChild(sticker);
@@ -307,7 +307,7 @@ Nuestro objetivo es fomentar el bienestar animal y crear una comunidad donde cad
                     sticker.remove();
                 }, duracion * 1000);
 
-            }, i * 250); // Este número (150ms) controla qué tan separados van saliendo uno del otro
+            }, i * 300); // Este número (300ms) controla qué tan separados van saliendo uno del otro
         }
     }
 </script>
