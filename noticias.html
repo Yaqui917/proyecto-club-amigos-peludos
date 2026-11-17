@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>📰 Noticias | Club Amigos Peludos</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#fff5e4;
+}
+
+header{
+    background:linear-gradient(90deg,#ff7b54,#ffb26b,#ffd56f);
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+nav{
+    background:#ff914d;
+    padding:15px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    background:#ffb26b;
+    padding:12px 22px;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background:white;
+    color:#ff914d;
+}
+
+.noticia{
+
+    width:85%;
+    max-width:900px;
+
+    margin:25px auto;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+.noticia h2{
+    color:#ff914d;
+}
+
+.progreso{
+
+    width:100%;
+
+    background:#eee;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+.progreso-barra{
+
+    height:25px;
+
+    width:64%;
+
+    background:#ff914d;
+
+    color:white;
+
+    text-align:center;
+
+    line-height:25px;
+
+    font-weight:bold;
+}
+
+footer{
+    background:#ff914d;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:30px;
+}
+
+@media (max-width:768px){
+
+    nav{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    nav a{
+        width:85%;
+        text-align:center;
+    }
+
+    .noticia{
+        width:90%;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>📰 Noticias y Comunidad</h1>
+
+<p>Mantente informado sobre nuestras mascotas</p>
+
+</header>
+
+<nav>
+<a href="index.html">🏠 Inicio</a>
+<a href="mascotas.html">🐾 Mascotas</a>
+<a href="galeria.html">📸 Galería</a>
+<a href="cuidados.html">❤️ Cuidados</a>
+<a href="eventos.html">🎉 Eventos</a>
+<a href="noticias.html">📰 Noticias</a>
+<a href="contacto.html">📩 Contacto</a>
+</nav>
+
+<div class="noticia">
+
+<h2>🔍 Mascota Perdida</h2>
+<img src="perdido1.jpeg" alt="perdido">
+<p><strong>Nombre:</strong> [desconocido]</p>
+<p><strong>Raza:</strong> [desconocida]</p>
+<p><strong>Última ubicación:</strong> Unidad Deportiva</p>
+<p><strong>Fecha:</strong> 17 de noviembre de 2026</p>
+<p>
+Si tienes información sobre sus dueños, comunícate con nuestro club.
+</p>
+</div>
+
+<div class="noticia">
+<h2>❤️ Recaudación para Canelito</h2>
+<img src="recaudacion1.jpeg" alt="recaudacion">
+<p>
+Canelito fue adoptado con signos de maltrato y necesita dinero para sus tratamientos médicos. Ayúdanos a recaudar fondos para su recuperación.
+Escribir al 8781081880 para más información.
+</p>
+
+<p><strong>Meta:</strong> $5,000 MXN</p>
+<p><strong>Recaudado:</strong> $500 MXN</p>
+<div class="progreso">
+<div class="progreso-barra"> 20% </div>
+</div>
+</div>
+
+<div class="noticia">
+<h2>🏡 Adopción Responsable</h2>
+<img src="adopcion1.jpeg" alt="adopcion">
+<p><strong>Nombre:</strong> [desconocido]</p>
+<p><strong>Edad:</strong> [desconocida]</p>
+<p><strong>Personalidad:</strong> tranquilo</p>
+<p>
+Perrito macho en adopcion, lo tienen en resguardo, se encontraba solito en la calle.
+Mas informacion al +52 878 700 0012
+</p>
+</div>
+
+<footer>
+🐾 Club Amigos Peludos | Noticias de la comunidad
+</footer>
+
+</body>
+</html>
