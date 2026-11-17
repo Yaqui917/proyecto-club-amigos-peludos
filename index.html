@@ -228,6 +228,22 @@ Nuestro objetivo es fomentar el bienestar animal y crear una comunidad donde cad
             <option value="moderada">Un rato al día para mimos y juegos cortos</option>
             <option value="basica">Cuidados sencillos y limpieza de su espacio</option>
         </select>
+
+        <label style="font-weight: bold; color: #555; display: block; margin-bottom: 5px;">3. ¿Qué tamaño de mascota prefieres?</label>
+        <select id="pregunta3" style="width:100%; padding:10px; border:2px solid #ffb26b; border-radius:10px; margin-bottom:15px;">
+            <option value="grande">Grande</option>
+            <option value="mediana">Mediana</option>
+            <option value="pequena">Pequeña</option>
+        </select>
+
+        <label style="font-weight: bold; color: #555; display: block; margin-bottom: 5px;">4. ¿Te interesan los animales exóticos?</label>
+        <select id="pregunta4" style="width:100%; padding:10px; border:2px solid #ffb26b; border-radius:10px;">
+            <option value="no">No mucho</option>
+            <option value="algo">Tal vez</option>
+            <option value="si">Sí, me encantan</option>
+        </select>
+
+
     </div>
 
     <button onclick="calcularMascota()" style="background: #ff914d; color: white; border: none; padding: 12px 25px; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s;">
@@ -242,29 +258,72 @@ Nuestro objetivo es fomentar el bienestar animal y crear una comunidad donde cad
 </section>
 
 <script>
-    function calcularMascota() {
-        const p1 = document.getElementById('pregunta1').value;
-        const p2 = document.getElementById('pregunta2').value;
-        const caja = document.getElementById('resultado-test');
-        const titulo = document.getElementById('titulo-resultado');
-        const texto = document.getElementById('texto-resultado');
 
-        if (p1 === 'activo' && p2 === 'mucha') {
-            titulo.textContent = "🐕 ¡Tu compañero ideal es un Perro!";
-            texto.textContent = "Tienes la energía y el tiempo perfectos para un perro. Disfrutarán juntos de caminatas, juegos al aire libre y mucha lealtad.";
-        } else if (p1 === 'tranquilo' || p2 === 'moderada') {
-            titulo.textContent = "🐈 ¡Tu compañero ideal es un Gato!";
-            texto.textContent = "Los gatos son independientes, limpios y adoran las tardes tranquilas en casa. Te dará compañía sin exigir paseos diarios.";
-        } else {
-            titulo.textContent = "🐇 ¡Tu compañero ideal es un Conejo o Hámster!";
-            texto.textContent = "Si buscas una mascota tierna que se adapte a espacios pequeños y rutinas ocupadas, un pequeño mamífero será excelente para ti.";
-        }
+function calcularMascota() {
 
-        caja.style.display = "block";
+    const p1 = document.getElementById("pregunta1").value;
+    const p2 = document.getElementById("pregunta2").value;
+    const p3 = document.getElementById("pregunta3").value;
+    const p4 = document.getElementById("pregunta4").value;
+
+    const caja = document.getElementById("resultado-test");
+    const titulo = document.getElementById("titulo-resultado");
+    const texto = document.getElementById("texto-resultado");
+
+    if(p1==="activo" && p2==="mucha"){
+        titulo.innerHTML="🐶 ¡Tu mascota ideal es un Perro!";
+        texto.innerHTML="Eres una persona activa y con tiempo para dedicar. Los perros disfrutan los paseos, juegos y aventuras al aire libre.";
     }
+
+    else if(p1==="tranquilo" && p2==="moderada"){
+        titulo.innerHTML="🐱 ¡Tu mascota ideal es un Gato!";
+        texto.innerHTML="Te gusta la tranquilidad y la compañía sin demasiadas exigencias. Un gato encajaría perfectamente contigo.";
+    }
+
+    else if(p3==="pequena" && p2==="basica"){
+        titulo.innerHTML="🐹 ¡Tu mascota ideal es un Hámster!";
+        texto.innerHTML="Buscas una mascota pequeña, simpática y fácil de cuidar. El hámster es una excelente opción.";
+    }
+
+    else if(p4==="si" && p3==="grande"){
+        titulo.innerHTML="🦎 ¡Tu mascota ideal es una Iguana!";
+        texto.innerHTML="Te llaman la atención los animales exóticos y estás dispuesto a aprender cuidados más especializados.";
+    }
+
+    else if(p4==="si" && p3==="pequena"){
+        titulo.innerHTML="🐍 ¡Tu mascota ideal es una Serpiente!";
+        texto.innerHTML="Te gustan las mascotas poco comunes y no te importa dedicar tiempo a conocer sus necesidades.";
+    }
+
+    else if(p1==="poco_espacio"){
+        titulo.innerHTML="🐠 ¡Tu mascota ideal es un Pez!";
+        texto.innerHTML="Los peces son perfectos para espacios reducidos y añaden tranquilidad y belleza al hogar.";
+    }
+
+    else if(p3==="mediana" && p2==="moderada"){
+        titulo.innerHTML="🐇 ¡Tu mascota ideal es un Conejo!";
+        texto.innerHTML="Los conejos son juguetones, cariñosos y pueden adaptarse muy bien a diferentes hogares.";
+    }
+
+    else{
+        titulo.innerHTML="🦜 ¡Tu mascota ideal es un Periquito!";
+        texto.innerHTML="Eres una persona sociable y curiosa. Los periquitos son inteligentes, coloridos y muy entretenidos.";
+    }
+    caja.style.display="block";
+}
 </script>
-<a href="tipos.html" class="boton">
-    🔍 Conocer los tipos de mascotas
+
+<a href="tipos.html"
+style="
+display:inline-block;
+margin-top:15px;
+background:#ff914d;
+color:white;
+padding:10px 20px;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;">
+🔍 Saber más sobre esta mascota
 </a>
 
 <footer>
