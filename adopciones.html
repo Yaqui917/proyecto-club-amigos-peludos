@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adopciones Responsables | Club Amigos Peludos</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff5e4;
+}
+header {
+    background: linear-gradient(90deg, #ff7b54, #ffb26b, #ffd56f);
+    color: white;
+    text-align: center;
+    padding: 35px;
+}
+header h1 { margin: 0; font-size: 2.5rem; }
+header p { font-size: 1.2rem; }
+
+nav {
+    background: #ff914d;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    background: #ffb26b;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav a:hover {
+    background: white;
+    color: #ff914d;
+}
+
+.noticia {
+    width: 85%;
+    max-width: 900px;
+    margin: 25px auto;
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+    border-left: 8px solid #2196f3; /* Color azul característico para adopciones */
+}
+
+.noticia h2 {
+    color: #2196f3;
+    margin-top: 0;
+}
+
+.contenido-adopcion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-adopcion img {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+
+.info-adopcion {
+    flex: 1;
+    min-width: 280px;
+}
+
+.volver {
+    display: block;
+    text-align: center;
+    margin: 30px;
+    color: #ff914d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background: #ff914d;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    nav { flex-direction: column; align-items: center; }
+    nav a { width: 85%; text-align: center; }
+    .noticia { width: 90%; }
+    .contenido-adopcion { flex-direction: column; }
+    .contenido-adopcion img { width: 100%; height: 220px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🏡 Adopción Responsable</h1>
+    <p>Conoce a los peludos que buscan un hogar lleno de amor</p>
+</header>
+
+<nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="noticias.html">📰 Volver a Noticias</a>
+</nav>
+
+<!-- Adopción 1 -->
+<div class="noticia">
+    <h2>🏡 Adopción Responsable</h2>
+    <div class="contenido-adopcion">
+        <img src="adopcion1.jpeg" alt="Adopción 1">
+        <div class="info-adopcion">
+            <p><strong>Nombre:</strong> [Desconocido]</p>
+            <p><strong>Edad:</strong> [Desconocida]</p>
+            <p><strong>Personalidad:</strong> Tranquilo</p>
+            <p>Perrito macho en adopción, lo tienen en resguardo tras ser encontrado solito en la calle.</p>
+            <p><strong>Contacto:</strong> +52 878 700 0012</p>
+        </div>
+    </div>
+</div>
+
+<!-- Adopción 2 -->
+<div class="noticia">
+    <h2>🏡 Adopción Responsable</h2>
+    <div class="contenido-adopcion">
+        <img src="adopcion2.jpg" alt="Adopción 2">
+        <div class="info-adopcion">
+            <p><strong>Nombre:</strong> [Desconocido]</p>
+            <p><strong>Edad:</strong> 2 meses</p>
+            <p><strong>Personalidad:</strong> Muy cariñosos</p>
+            <p><strong>Contacto:</strong> 878 153 8212</p>
+        </div>
+    </div>
+</div>
+
+<!-- Adopción 3 -->
+<div class="noticia">
+    <h2>🏡 Adopción Responsable</h2>
+    <div class="contenido-adopcion">
+        <img src="adopcion3.png" alt="Adopción 3">
+        <div class="info-adopcion">
+            <p><strong>Nombre:</strong> [Desconocido]</p>
+            <p><strong>Edad:</strong> Meses</p>
+            <p><strong>Raza:</strong> Naranja esponjado y Siamés</p>
+            <p><strong>Personalidad:</strong> Muy lindo y cariñoso</p>
+            <p>El gatito naranja solo está mal peinado, pero es muy lindo, se deja agarrar y cargar.</p>
+            <p><strong>Contacto:</strong> 878 153 8212</p>
+        </div>
+    </div>
+</div>
+
+<!-- Adopción 4 -->
+<div class="noticia">
+    <h2>🏡 Adopción Responsable</h2>
+    <div class="contenido-adopcion">
+        <img src="adopcion4.jpg" alt="Adopción 4">
+        <div class="info-adopcion">
+            <p><strong>Nombre:</strong> Duquesa</p>
+            <p><strong>Edad:</strong> 5 meses</p>
+            <p><strong>Personalidad:</strong> Cariñosa y juguetona</p>
+            <p>Es sorda, tiene heterocromía, hace caso con señas, usa el arenero. Solo come un alimento de Farmacia Guadalajara llamado "FORTI CAT" (es el único que no le da diarrea).</p>
+            <p><strong>Contacto:</strong> 993 256 4086</p>
+        </div>
+    </div>
+</div>
+
+<a href="noticias.html" class="volver">← Volver al menú de noticias</a>
+
+<footer>
+    🐾 Club Amigos Peludos | Sección de Adopciones
+</footer>
+
+</body>
+</html>

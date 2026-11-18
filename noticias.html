@@ -1,385 +1,169 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>📰 Noticias | Club Amigos Peludos</title>
-
+<title>Noticias y Comunidad | Club Amigos Peludos</title>
 <style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff5e4;
+}
+header {
+    background: linear-gradient(90deg, #ff7b54, #ffb26b, #ffd56f);
+    color: white;
+    text-align: center;
+    padding: 35px;
+}
+header h1 { margin: 0; font-size: 2.5rem; }
+header p { font-size: 1.2rem; }
 
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#fff5e4;
+nav {
+    background: #ff914d;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    background: #ffb26b;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav a:hover { background: white; color: #ff914d; }
+
+.contenedor-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-header{
-    background:linear-gradient(90deg,#ff7b54,#ffb26b,#ffd56f);
-    color:white;
-    text-align:center;
-    padding:35px;
+.tarjeta-categoria {
+    background: white;
+    flex: 1;
+    min-width: 280px;
+    max-width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-top: 8px solid #ff7b54;
 }
 
-nav{
-    background:#ff914d;
-    padding:15px;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
+.tarjeta-categoria:hover {
+    transform: translateY(-8px);
 }
 
-nav a{
-    text-decoration:none;
-    color:white;
-    background:#ffb26b;
-    padding:12px 22px;
-    border-radius:25px;
-    font-weight:bold;
+.tarjeta-categoria img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
 }
 
-nav a:hover{
-    background:white;
-    color:#ff914d;
+.tarjeta-contenido {
+    padding: 20px;
 }
 
-.noticia{
-
-    width:85%;
-    max-width:900px;
-
-    margin:25px auto;
-
-    background:white;
-
-    border-radius:20px;
-
-    padding:25px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-
+.tarjeta-contenido h2 {
+    color: #ff7b54;
+    margin-top: 0;
 }
 
-.noticia h2{
-    color:#ff914d;
+.tarjeta-contenido p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
-.perdida{
-    border-left:8px solid #ff5252;
+.btn-explorar {
+    display: inline-block;
+    margin-top: 15px;
+    background: #ff914d;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.ayuda{
-    border-left:8px solid #4caf50;
+.btn-explorar:hover {
+    background: #ff7b54;
 }
 
-.adopcion{
-    border-left:8px solid #2196f3;
+footer {
+    background: #ff914d;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
 }
-
-.contenido-perdida{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-    align-items:center;
-    justify-content:center;
-}
-
-.contenido-perdida img{
-    flex:1;
-    min-width:280px;
-    max-width:400px;
-    height:280px;
-    object-fit:cover;
-    border-radius:15px;
-    box-shadow:0 4px 12px rgba(0,0,0,.2);
-}
-
-.mapa{
-    flex:1;
-    min-width:280px;
-}
-
-.mapa iframe{
-    width:100%;
-    height:280px;
-    border:none;
-    border-radius:15px;
-    box-shadow:0 4px 12px rgba(0,0,0,.2);
-}
-
-.btn-mapa{
-    display:block;
-    text-align:center;
-    margin-top:10px;
-    background:#ff914d;
-    color:white;
-    text-decoration:none;
-    padding:10px;
-    border-radius:20px;
-    font-weight:bold;
-}
-
-.btn-mapa:hover{
-    background:#ff7b54;
-}
-
-.noticia img{
-
-    display:block;
-
-    width:100%;
-
-    max-width:500px;
-
-    height:300px;
-
-    object-fit:cover;
-
-    margin:15px auto 20px auto;
-
-    border-radius:15px;
-
-    box-shadow:0 4px 12px rgba(0,0,0,.2);
-
-    border:4px solid #fff5e4;
-
-}
-
-.progreso{
-
-    width:100%;
-
-    background:#eee;
-
-    border-radius:15px;
-
-    overflow:hidden;
-
-}
-
-.progreso-barra{
-
-    height:25px;
-
-    width:64%;
-
-    background:#ff914d;
-
-    color:white;
-
-    text-align:center;
-
-    line-height:25px;
-
-    font-weight:bold;
-}
-
-footer{
-    background:#ff914d;
-    color:white;
-    text-align:center;
-    padding:15px;
-    margin-top:30px;
-}
-
-@media (max-width:768px){
-
-    nav{
-        flex-direction:column;
-        align-items:center;
-    }
-
-    nav a{
-        width:85%;
-        text-align:center;
-    }
-
-    .noticia{
-        width:90%;
-    }
-
-    .noticia img{
-        height:220px;
-    }
-
-    .contenido-perdida{
-        flex-direction:column;
-    }
-
-    .contenido-perdida img{
-        width:100%;
-        height:220px;
-    }
-
-    .mapa iframe{
-        height:220px;
-    }
-}
-
 </style>
-
 </head>
-
 <body>
 
 <header>
-
-<h1>📰 Noticias y Comunidad</h1>
-
-<p>Mantente informado sobre nuestras mascotas</p>
-
+    <h1>📰 Noticias y Comunidad</h1>
+    <p>Selecciona una categoría para ver los reportes y avisos</p>
 </header>
 
 <nav>
-<a href="index.html">🏠 Inicio</a>
-<a href="mascotas.html">🐾 Mascotas</a>
-<a href="galeria.html">📸 Galería</a>
-<a href="cuidados.html">❤️ Cuidados</a>
-<a href="eventos.html">🎉 Eventos</a>
-<a href="noticias.html">📰 Noticias</a>
-<a href="contacto.html">📩 Contacto</a>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="mascotas.html">🐾 Mascotas</a>
+    <a href="galeria.html">📸 Galería</a>
+    <a href="cuidados.html">❤️ Cuidados</a>
+    <a href="eventos.html">🎉 Eventos</a>
+    <a href="noticias.html" style="background: white; color: #ff914d;">📰 Noticias</a>
+    <a href="contacto.html">📩 Contacto</a>
 </nav>
 
-<div class="noticia">
-
-<div class="noticia perdida">
-
-<h2>🔍 Mascota Perdida</h2>
-<div class="contenido-perdida">
-    <img src="perdido1.jpeg" alt="Mascota perdida">
-    <div class="mapa">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28003.96620975646!2d-100.60242891311647!3d28.67481261836814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865f8b0658d89475%3A0x574d5df6488d4079!2sUnidad%20Deportiva%20Santiago%20V.%20Gonz%C3%A1lez!5e0!3m2!1sen!2smx!4v1794971167689!5m2!1sen!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<div class="contenedor-categorias">
+    
+    <!-- Categoría 1: Desaparecidos -->
+    <div class="tarjeta-categoria" style="border-top-color: #ff5252;">
+        <img src="perdido1.jpeg" alt="Mascotas Perdidas">
+        <div class="tarjeta-contenido">
+            <h2>🔍 Mascotas Perdidas</h2>
+            <p>Consulta los reportes activos de perritos y gatitos extraviados en la zona para ayudar a que regresen a casa.</p>
+            <a href="perdidos.html" class="btn-explorar">Ver Desaparecidos</a>
+        </div>
     </div>
-</div>
-<p><strong>Nombre:</strong> Desconocido</p>
-<p><strong>Raza:</strong> Desconocida</p>
-<p><strong>Última ubicación:</strong> Unidad Deportiva</p>
-<p><strong>Fecha:</strong> 17 de noviembre de 2026</p>
-<p>
-Si tienes información sobre sus dueños, comunícate con nuestro club.
-</p>
-</div>
 
-<div class="noticia perdida">
-
-<h2>🔍 Mascota Perdida</h2>
-<div class="contenido-perdida">
-    <img src="perdido2.jpg" alt="Mascota perdida">
-    <div class="mapa">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7000.745871298295!2d-100.55378231188183!3d28.67848875255814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865f8b9e2167fd87%3A0xc342b7fffdf89bb1!2sChapultepec%2C%2026070%20Piedras%20Negras%2C%20Coahuila!5e0!3m2!1sen!2smx!4v1794972422705!5m2!1sen!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <!-- Categoría 2: Adopciones -->
+    <div class="tarjeta-categoria" style="border-top-color: #2196f3;">
+        <img src="adopcion1.jpeg" alt="Adopción Responsable">
+        <div class="tarjeta-contenido">
+            <h2>🏡 Adopciones</h2>
+            <p>Conoce a los peludos que buscan una familia amorosa y un hogar seguro donde ser felices.</p>
+            <a href="adopciones.html" class="btn-explorar">Ver Adopciones</a>
+        </div>
     </div>
-</div>
-<p><strong>Nombre:</strong> Kámala</p>
-<p><strong>Raza:</strong> Desconocida</p>
-<p><strong>Última ubicación:</strong> Col. Chapultepec</p>
-<p><strong>Fecha:</strong> 17 de noviembre de 2026</p>
-<p>
-Si tienes información sobre el paradero de la mascota, comunícate con nuestro club.
-</p>
-</div>
 
-<h2>🔍 Mascota Perdida</h2>
-<div class="contenido-perdida">
-    <img src="perdido3.jpg" alt="Mascota perdida">
-    <div class="mapa">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6998.277781994974!2d-100.57442501187462!3d28.715394952478096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865f8bd3d0bd251d%3A0xb00b72f6eea85f4c!2s24%20de%20Agosto%2C%20Piedras%20Negras%2C%20Coahuila!5e0!3m2!1sen!2smx!4v1794975676418!5m2!1sen!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <!-- Categoría 3: Recaudaciones -->
+    <div class="tarjeta-categoria" style="border-top-color: #4caf50;">
+        <img src="recaudacion1.jpeg" alt="Recaudaciones">
+        <div class="tarjeta-contenido">
+            <h2>❤️ Recaudaciones</h2>
+            <p>Apoya con donaciones y tratamientos médicos para los rescatados que más lo necesitan.</p>
+            <a href="recaudaciones.html" class="btn-explorar">Ver Campañas</a>
+        </div>
     </div>
-</div>
-<p><strong>Nombre:</strong> Baby</p>
-<p><strong>Raza:</strong> Desconocida</p>
-<p><strong>Última ubicación:</strong> Col. 24 de Agosto</p>
-<p><strong>Fecha:</strong> ultima semana</p>
-<p>
-Si tienes información sobre el paradero de la mascota, comunícate a 8781118964.
-Se ofrece recompensa.
-</p>
-</div>
 
-<h2>🔍 Mascota Perdida</h2>
-<div class="contenido-perdida">
-    <img src="perdido4.jpg" alt="Mascota perdida">
-    <div class="mapa">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7000.897912757128!2d-100.58207096188238!3d28.676213802563037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865f8baae839ed99%3A0xdfd73b5fa4cbad29!2sVillas%20del%20Carmen%2C%2026080%20Piedras%20Negras%2C%20Coahuila!5e0!3m2!1sen!2smx!4v1794975606935!5m2!1sen!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-    </div>
-</div>
-<p><strong>Nombre:</strong> Lulu</p>
-<p><strong>Raza:</strong> Desconocida</p>
-<p><strong>Última ubicación:</strong> Villas del Carmen</p>
-<p><strong>Fecha:</strong> 14 de Noviembre del 2026</p>
-<p>
-Si tienes información sobre el paradero de la mascota, comunícate a 8781157687.
-(No llevaba el sueter rosa que se ve en la foto)
-</p>
-</div>
-
-<div class="noticia ayuda">
-<h2>❤️ Recaudación para Canelito</h2>
-<img src="recaudacion1.jpeg" alt="recaudacion">
-<p>
-Canelito fue adoptado con signos de maltrato y necesita dinero para sus tratamientos médicos. Ayúdanos a recaudar fondos para su recuperación.
-Escribir al 8781081880 para más información.
-</p>
-
-<p><strong>Meta:</strong> $5,000 MXN</p>
-<p><strong>Recaudado:</strong> $500 MXN</p>
-<div class="progreso">
-<div class="progreso-barra"> 20% </div>
-</div>
-</div>
-
-<div class="noticia adopcion">
-<h2>🏡 Adopción Responsable</h2>
-<img src="adopcion1.jpeg" alt="adopcion">
-<p><strong>Nombre:</strong> [desconocido]</p>
-<p><strong>Edad:</strong> [desconocida]</p>
-<p><strong>Personalidad:</strong> tranquilo</p>
-<p>
-Perrito macho en adopcion, lo tienen en resguardo, se encontraba solito en la calle.
-Mas informacion al +52 878 700 0012
-</p>
-</div>
-
-<div class="noticia adopcion">
-<h2>🏡 Adopción Responsable</h2>
-<img src="adopcion2.jpg" alt="adopcion">
-<p><strong>Nombre:</strong> [desconocido]</p>
-<p><strong>Edad:</strong> 2 meses</p>
-<p><strong>Personalidad:</strong> muy cariñosos</p>
-<p>
-Mas informacion al 878 153 8212
-</p>
-</div>
-
-<div class="noticia adopcion">
-<h2>🏡 Adopción Responsable</h2>
-<img src="adopcion3.png" alt="adopcion">
-<p><strong>Nombre:</strong> [desconocido]</p>
-<p><strong>Edad:</strong> meses</p>
-<p><strong>Raza:</strong> naranja esponjado y Siames</p>
-<p><strong>Personalidad:</strong> muy lindo y cariñoso</p>
-<p>
-El gatito naranja solo esta mal peinado, pero es muy lindo y cariñoso, se deja agarrar y cargar.
-Mas informacion al 878 153 8212
-</p>
-</div>
-
-<div class="noticia adopcion">
-<h2>🏡 Adopción Responsable</h2>
-<img src="adopcion4.jpg" alt="adopcion">
-<p><strong>Nombre:</strong> Duquesa</p>
-<p><strong>Edad:</strong> 5 meses</p>
-<p><strong>Personalidad:</strong> cariñosa y juguetona, </p>
-<p>
-Es sorda, tiene heterocromia, hace caso con señas, usa el arenero y no come otros alimentos mas que un alimento de la Farmacia Guadalajara que se llama "FORTI CAT", es el unico que no le da Diarreis.
-Interesa en adoptar a Duquesa? Contacta al 993 256 4086
-</p>
 </div>
 
 <footer>
-🐾 Club Amigos Peludos | Noticias de la comunidad
+    🐾 Club Amigos Peludos | Noticias de la comunidad
 </footer>
 
 </body>

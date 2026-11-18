@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recaudaciones y Ayuda | Club Amigos Peludos</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff5e4;
+}
+header {
+    background: linear-gradient(90deg, #ff7b54, #ffb26b, #ffd56f);
+    color: white;
+    text-align: center;
+    padding: 35px;
+}
+header h1 { margin: 0; font-size: 2.5rem; }
+header p { font-size: 1.2rem; }
+
+nav {
+    background: #ff914d;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    background: #ffb26b;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav a:hover {
+    background: white;
+    color: #ff914d;
+}
+
+.noticia {
+    width: 85%;
+    max-width: 900px;
+    margin: 25px auto;
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+    border-left: 8px solid #4caf50; /* Color verde característico para recaudaciones/ayuda */
+}
+
+.noticia h2 {
+    color: #4caf50;
+    margin-top: 0;
+}
+
+.contenido-recaudacion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-recaudacion img {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+
+.info-recaudacion {
+    flex: 1;
+    min-width: 280px;
+}
+
+.progreso {
+    width: 100%;
+    background: #eee;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.progreso-barra {
+    height: 25px;
+    width: 20%; /* Porcentaje recaudado actual (ej. $500 de $5,000 es 20%) */
+    background: #4caf50;
+    color: white;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.volver {
+    display: block;
+    text-align: center;
+    margin: 30px;
+    color: #ff914d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background: #ff914d;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    nav { flex-direction: column; align-items: center; }
+    nav a { width: 85%; text-align: center; }
+    .noticia { width: 90%; }
+    .contenido-recaudacion { flex-direction: column; }
+    .contenido-recaudacion img { width: 100%; height: 220px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>❤️ Campañas de Recaudación</h1>
+    <p>Apoya los tratamientos médicos y la recuperación de nuestros rescatados</p>
+</header>
+
+<nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="noticias.html">📰 Volver a Noticias</a>
+</nav>
+
+<!-- Recaudación: Canelito -->
+<div class="noticia">
+    <h2>❤️ Recaudación para Canelito</h2>
+    <div class="contenido-recaudacion">
+        <img src="recaudacion1.jpeg" alt="Recaudación Canelito">
+        <div class="info-recaudacion">
+            <p>Canelito fue adoptado con signos de maltrato y necesita apoyo económico para sus tratamientos médicos y medicamentos. ¡Ayúdanos a lograr su recuperación!</p>
+            <p><strong>Meta:</strong> $5,000 MXN</p>
+            <p><strong>Recaudado:</strong> $500 MXN</p>
+            <p><strong>Contacto para donaciones:</strong> 878 108 1880</p>
+            
+            <!-- Barra de progreso interactiva -->
+            <div class="progreso">
+                <div class="progreso-barra">20%</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="noticias.html" class="volver">← Volver al menú de noticias</a>
+
+<footer>
+    🐾 Club Amigos Peludos | Sección de Recaudaciones
+</footer>
+
+</body>
+</html>

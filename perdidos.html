@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mascotas Perdidas | Club Amigos Peludos</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff5e4;
+}
+header {
+    background: linear-gradient(90deg, #ff7b54, #ffb26b, #ffd56f);
+    color: white;
+    text-align: center;
+    padding: 35px;
+}
+header h1 { margin: 0; font-size: 2.5rem; }
+header p { font-size: 1.2rem; }
+
+nav {
+    background: #ff914d;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    background: #ffb26b;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav a:hover {
+    background: white;
+    color: #ff914d;
+}
+
+.noticia {
+    width: 85%;
+    max-width: 900px;
+    margin: 25px auto;
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+    border-left: 8px solid #ff5252;
+}
+
+.noticia h2 {
+    color: #ff5252;
+    margin-top: 0;
+}
+
+.contenido-perdida {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-perdida img {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+
+.mapa {
+    flex: 1;
+    min-width: 280px;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 280px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+
+.volver {
+    display: block;
+    text-align: center;
+    margin: 30px;
+    color: #ff914d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background: #ff914d;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    nav { flex-direction: column; align-items: center; }
+    nav a { width: 85%; text-align: center; }
+    .noticia { width: 90%; }
+    .contenido-perdida { flex-direction: column; }
+    .contenido-perdida img { width: 100%; height: 220px; }
+    .mapa iframe { height: 220px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🔍 Mascotas Perdidas</h1>
+    <p>Ayúdanos a reportar o encontrar información de estos animalitos</p>
+</header>
+
+<nav>
+    <a href="index.html">🏠 Inicio</a>
+    <a href="noticias.html">📰 Volver a Noticias</a>
+</nav>
+
+<!-- Mascota Perdida 1: Desconocido -->
+<div class="noticia">
+    <h2>🔍 Mascota Perdida</h2>
+    <div class="contenido-perdida">
+        <img src="perdido1.jpeg" alt="Mascota perdida">
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28003.96620975646!2d-100.60242891311647!3d28.67481261836814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865f8b0658d89475%3A0x574d5df6488d4079!2sUnidad%20Deportiva%20Santiago%20V.%20Gonz%C3%A1lez!5e0!3m2!1sen!2smx!4v1794971167689!5m2!1sen!2smx" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    <p><strong>Nombre:</strong> Desconocido</p>
+    <p><strong>Raza:</strong> Desconocida</p>
+    <p><strong>Última ubicación:</strong> Unidad Deportiva</p>
+    <p><strong>Fecha:</strong> 17 de noviembre de 2026</p>
+    <p>Si tienes información sobre sus dueños, comunícate con nuestro club.</p>
+</div>
+
+<!-- Mascota Perdida 2: Kámala -->
+<div class="noticia">
+    <h2>🔍 Mascota Perdida</h2>
+    <div class="contenido-perdida">
+        <img src="perdido2.jpg" alt="Mascota perdida">
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7000.745871298295!2d-100.55378231188183!3d28.67848875255814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865f8b9e2167fd87%3A0xc342b7fffdf89bb1!2sChapultepec%2C%2026070%20Piedras%20Negras%2C%20Coahuila!5e0!3m2!1sen!2smx!4v1794972422705!5m2!1sen!2smx" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    <p><strong>Nombre:</strong> Kámala</p>
+    <p><strong>Raza:</strong> Desconocida</p>
+    <p><strong>Última ubicación:</strong> Col. Chapultepec</p>
+    <p><strong>Fecha:</strong> 17 de noviembre de 2026</p>
+    <p>Si tienes información sobre el paradero de la mascota, comunícate con nuestro club.</p>
+</div>
+
+<!-- Mascota Perdida 3: Baby -->
+<div class="noticia">
+    <h2>🔍 Mascota Perdida</h2>
+    <div class="contenido-perdida">
+        <img src="perdido3.jpg" alt="Mascota perdida">
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6998.277781994974!2d-100.57442501187462!3d28.715394952478096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865f8bd3d0bd251d%3A0xb00b72f6eea85f4c!2s24%20de%20Agosto%2C%20Piedras%20Negras%2C%20Coahuila!5e0!3m2!1sen!2smx!4v1794975676418!5m2!1sen!2smx" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    <p><strong>Nombre:</strong> Baby</p>
+    <p><strong>Raza:</strong> Desconocida</p>
+    <p><strong>Última ubicación:</strong> Col. 24 de Agosto</p>
+    <p><strong>Fecha:</strong> Ultima semana</p>
+    <p>Si tienes información sobre el paradero de la mascota, comunícate a 8781118964. Se ofrece recompensa.</p>
+</div>
+
+<!-- Mascota Perdida 4: Lulu -->
+<div class="noticia">
+    <h2>🔍 Mascota Perdida</h2>
+    <div class="contenido-perdida">
+        <img src="perdido4.jpg" alt="Mascota perdida">
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7000.897912757128!2d-100.58207096188238!3d28.676213802563037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865f8baae839ed99%3A0xdfd73b5fa4cbad29!2sVillas%20del%20Carmen%2C%2026080%20Piedras%20Negras%2C%20Coahuila!5e0!3m2!1sen!2smx!4v1794975606935!5m2!1sen!2smx" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    <p><strong>Nombre:</strong> Lulu</p>
+    <p><strong>Raza:</strong> Desconocida</p>
+    <p><strong>Última ubicación:</strong> Villas del Carmen</p>
+    <p><strong>Fecha:</strong> 14 de Noviembre del 2026</p>
+    <p>Si tienes información sobre el paradero de la mascota, comunícate a 8781157687. (No llevaba el suéter rosa que se ve en la foto)</p>
+</div>
+
+<a href="noticias.html" class="volver">← Volver al menú de noticias</a>
+
+<footer>
+    🐾 Club Amigos Peludos | Sección de Desaparecidos
+</footer>
+
+</body>
+</html>
