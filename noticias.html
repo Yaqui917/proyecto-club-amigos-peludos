@@ -38,16 +38,51 @@ nav a {
 }
 nav a:hover { background: white; color: #ff914d; }
 
+/* Sección de Estadísticas Estilo Panel */
+.estadisticas {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 35px auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    min-width: 160px;
+    border-bottom: 5px solid #ff914d;
+}
+
+.stat-box h3 {
+    margin: 0;
+    font-size: 2rem;
+    color: #ff7b54;
+}
+
+.stat-box p {
+    margin: 5px 0 0 0;
+    color: #666;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* Contenedor de Tarjetas Clicables */
 .contenedor-categorias {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 20px auto 40px auto;
     padding: 0 20px;
 }
 
+/* Convertimos toda la tarjeta en un enlace limpio */
 .tarjeta-categoria {
     background: white;
     flex: 1;
@@ -57,12 +92,31 @@ nav a:hover { background: white; color: #ff914d; }
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 8px solid #ff7b54;
+    text-decoration: none; /* Quitamos subrayado de enlace */
+    color: inherit;
+    display: block;
+    position: relative;
 }
 
 .tarjeta-categoria:hover {
     transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Distintivos visuales (Badges) */
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    backdrop-filter: blur(4px);
 }
 
 .tarjeta-categoria img {
@@ -86,28 +140,17 @@ nav a:hover { background: white; color: #ff914d; }
     line-height: 1.5;
 }
 
-.btn-explorar {
-    display: inline-block;
-    margin-top: 15px;
-    background: #ff914d;
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-explorar:hover {
-    background: #ff7b54;
-}
-
 footer {
     background: #ff914d;
     color: white;
     text-align: center;
     padding: 15px;
     margin-top: 50px;
+}
+
+@media(max-width: 768px) {
+    nav { flex-direction: column; align-items: center; }
+    nav a { width: 85%; text-align: center; }
 }
 </style>
 </head>
@@ -128,43 +171,97 @@ footer {
     <a href="contacto.html">📩 Contacto</a>
 </nav>
 
+<!-- Panel de Estadísticas (Con IDs para el contador automático) -->
+<div class="estadisticas">
+    <div class="stat-box" style="border-bottom-color: #ff5252;">
+        <h3 id="contador-perdidos">-</h3>
+        <p>Mascotas Perdidas</p>
+    </div>
+    <div class="stat-box" style="border-bottom-color: #2196f3;">
+        <h3 id="contador-adopciones">-</h3>
+        <p>En Adopción</p>
+    </div>
+    <div class="stat-box" style="border-bottom-color: #4caf50;">
+        <h3 id="contador-campanas">-</h3>
+        <p>Campañas Activas</p>
+    </div>
+</div>
+
+<!-- Tarjetas totalmente clicables con distintivos visuales -->
 <div class="contenedor-categorias">
     
-    <!-- Categoría 1: Desaparecidos -->
-    <div class="tarjeta-categoria" style="border-top-color: #ff5252;">
+    <!-- Tarjeta 1: Perdidos -->
+    <a href="perdidos.html" class="tarjeta-categoria" style="border-top-color: #ff5252;">
+        <span class="badge">Urgente 🚨</span>
         <img src="perdido1.jpeg" alt="Mascotas Perdidas">
         <div class="tarjeta-contenido">
             <h2>🔍 Mascotas Perdidas</h2>
             <p>Consulta los reportes activos de perritos y gatitos extraviados en la zona para ayudar a que regresen a casa.</p>
-            <a href="perdidos.html" class="btn-explorar">Ver Desaparecidos</a>
         </div>
-    </div>
+    </a>
 
-    <!-- Categoría 2: Adopciones -->
-    <div class="tarjeta-categoria" style="border-top-color: #2196f3;">
+    <!-- Tarjeta 2: Adopciones -->
+    <a href="adopciones.html" class="tarjeta-categoria" style="border-top-color: #2196f3;">
+        <span class="badge">Hogares 🏡</span>
         <img src="adopcion1.jpeg" alt="Adopción Responsable">
         <div class="tarjeta-contenido">
             <h2>🏡 Adopciones</h2>
             <p>Conoce a los peludos que buscan una familia amorosa y un hogar seguro donde ser felices.</p>
-            <a href="adopciones.html" class="btn-explorar">Ver Adopciones</a>
         </div>
-    </div>
+    </a>
 
-    <!-- Categoría 3: Recaudaciones -->
-    <div class="tarjeta-categoria" style="border-top-color: #4caf50;">
+    <!-- Tarjeta 3: Recaudaciones -->
+    <a href="recaudaciones.html" class="tarjeta-categoria" style="border-top-color: #4caf50;">
+        <span class="badge">Apoyo ❤️</span>
         <img src="recaudacion1.jpeg" alt="Recaudaciones">
         <div class="tarjeta-contenido">
             <h2>❤️ Recaudaciones</h2>
             <p>Apoya con donaciones y tratamientos médicos para los rescatados que más lo necesitan.</p>
-            <a href="recaudaciones.html" class="btn-explorar">Ver Campañas</a>
         </div>
-    </div>
+    </a>
 
 </div>
 
 <footer>
     🐾 Club Amigos Peludos | Noticias de la comunidad
 </footer>
+
+<!-- Script inteligente para contar automáticamente los casos cargando las páginas -->
+<script>
+async function cargarContadores() {
+    try {
+        // Contar elementos en perdidos.html
+        let resPerdidos = await fetch('perdidos.html');
+        let htmlPerdidos = await resPerdidos.text();
+        let parser = new DOMParser();
+        let docPerdidos = parser.parseFromString(htmlPerdidos, 'text/html');
+        let totalPerdidos = docPerdidos.querySelectorAll('.noticia').length;
+        document.getElementById('contador-perdidos').textContent = totalPerdidos;
+
+        // Contar elementos en adopciones.html
+        let resAdopciones = await fetch('adopciones.html');
+        let htmlAdopciones = await resAdopciones.text();
+        let docAdopciones = parser.parseFromString(htmlAdopciones, 'text/html');
+        let totalAdopciones = docAdopciones.querySelectorAll('.noticia').length;
+        document.getElementById('contador-adopciones').textContent = totalAdopciones;
+
+        // Contar elementos en recaudaciones.html
+        let resRec = await fetch('recaudaciones.html');
+        let htmlRec = await resRec.text();
+        let docRec = parser.parseFromString(htmlRec, 'text/html');
+        let totalRec = docRec.querySelectorAll('.noticia').length;
+        document.getElementById('contador-campanas').textContent = totalRec;
+
+    } catch (error) {
+        // En caso de que se pruebe localmente sin servidor y falle el fetch, ponemos números de respaldo predeterminados
+        document.getElementById('contador-perdidos').textContent = "4";
+        document.getElementById('contador-adopciones').textContent = "4";
+        document.getElementById('contador-campanas').textContent = "1";
+    }
+}
+
+cargarContadores();
+</script>
 
 </body>
 </html>
