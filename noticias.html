@@ -67,6 +67,65 @@ nav a:hover{
     color:#ff914d;
 }
 
+.perdida{
+    border-left:8px solid #ff5252;
+}
+
+.ayuda{
+    border-left:8px solid #4caf50;
+}
+
+.adopcion{
+    border-left:8px solid #2196f3;
+}
+
+.contenido-perdida{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    align-items:center;
+    justify-content:center;
+}
+
+.contenido-perdida img{
+    flex:1;
+    min-width:280px;
+    max-width:400px;
+    height:280px;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.2);
+}
+
+.mapa{
+    flex:1;
+    min-width:280px;
+}
+
+.mapa iframe{
+    width:100%;
+    height:280px;
+    border:none;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.2);
+}
+
+.btn-mapa{
+    display:block;
+    text-align:center;
+    margin-top:10px;
+    background:#ff914d;
+    color:white;
+    text-decoration:none;
+    padding:10px;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+.btn-mapa:hover{
+    background:#ff7b54;
+}
+
 .noticia img{
 
     display:block;
@@ -145,6 +204,19 @@ footer{
     .noticia img{
         height:220px;
     }
+
+    .contenido-perdida{
+        flex-direction:column;
+    }
+
+    .contenido-perdida img{
+        width:100%;
+        height:220px;
+    }
+
+    .mapa iframe{
+        height:220px;
+    }
 }
 
 </style>
@@ -173,10 +245,22 @@ footer{
 
 <div class="noticia">
 
+<div class="noticia perdida">
+
 <h2>🔍 Mascota Perdida</h2>
-<img src="perdido1.jpeg" alt="perdido">
-<p><strong>Nombre:</strong> [desconocido]</p>
-<p><strong>Raza:</strong> [desconocida]</p>
+<div class="contenido-perdida">
+    <img src="perdido1.jpeg" alt="Mascota perdida">
+    <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28003.96620975646!2d-100.60242891311647!3d28.67481261836814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865f8b0658d89475%3A0x574d5df6488d4079!2sUnidad%20Deportiva%20Santiago%20V.%20Gonz%C3%A1lez!5e0!3m2!1sen!2smx!4v1794971167689!5m2!1sen!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <a class="btn-mapa"
+           href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28003.96620975646!2d-100.60242891311647!3d28.67481261836814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865f8b0658d89475%3A0x574d5df6488d4079!2sUnidad%20Deportiva%20Santiago%20V.%20Gonz%C3%A1lez!5e0!3m2!1sen!2smx!4v1794971167689!5m2!1sen!2smx"
+           target="_blank">
+           📍 Abrir ubicación en Google Maps
+        </a>
+    </div>
+</div>
+<p><strong>Nombre:</strong> Desconocido</p>
+<p><strong>Raza:</strong> Desconocida</p>
 <p><strong>Última ubicación:</strong> Unidad Deportiva</p>
 <p><strong>Fecha:</strong> 17 de noviembre de 2026</p>
 <p>
@@ -184,7 +268,7 @@ Si tienes información sobre sus dueños, comunícate con nuestro club.
 </p>
 </div>
 
-<div class="noticia">
+<div class="noticia ayuda">
 <h2>❤️ Recaudación para Canelito</h2>
 <img src="recaudacion1.jpeg" alt="recaudacion">
 <p>
@@ -199,7 +283,7 @@ Escribir al 8781081880 para más información.
 </div>
 </div>
 
-<div class="noticia">
+<div class="noticia adopcion">
 <h2>🏡 Adopción Responsable</h2>
 <img src="adopcion1.jpeg" alt="adopcion">
 <p><strong>Nombre:</strong> [desconocido]</p>
