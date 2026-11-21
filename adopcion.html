@@ -95,6 +95,35 @@ nav a:hover{
     background: #ff7b54;
 }
 
+.encabezado-jornada {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.estado {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+}
+
+.estado-pasando {
+    background: #2e7d32;
+}
+
+.estado-programado {
+    background: #1976d2;
+}
+
+.estado-acabado {
+    background: #757575;
+}
+
 .volver{
     display: block;
     text-align: center;
@@ -141,8 +170,21 @@ footer{
 <section class="contenedor">
 
     <div class="seccion-card">
+        <h2>📍 Campaña de adopcion animal</h2>
+        <p><strong>Horario:</strong> 6:00 PM - 9:00 PM</p>
+        <span class="estado estado-pasando">Pasando</span>
+        <p>Ven y conoce a nuestros rescatados que buscan un hogar lleno de amor. Requisitos: Llenar solicitud de adopcion, copia de INE, copia de comprobante de domicilio.</p>
+        
+        <div style="margin-top: 15px; border-radius: 10px; overflow: hidden;"></div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13566.818738595332!2d-100.54081935799971!3d28.7146209919994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865f8bf59c6c9547%3A0xc8ddaeb9573ad514!2sMacroplaza%201!5e0!3m2!1sen!2smx!4v1794773817109!5m2!1sen!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+
+        <a href="inscripcion.html?evento=Jornada%20de%20Adopción" class="btn-evento">🐾 Registrarme como adoptante</a>
+
+    <div class="seccion-card">
         <h2>📍 Jornada municipal de adopción y registro TNH PET</h2>
         <p><strong>Horario:</strong> 10:00 AM - 2:00 PM</p>
+        <span class="estado estado-acabado">Acabado</span>
         <p>Busca a tu nuevo amigo en esta jornada de adopción.</p>
         
         <div style="margin-top: 15px; border-radius: 10px; overflow: hidden;"></div>
@@ -155,6 +197,7 @@ footer{
     <div class="seccion-card">
         <h2>📍Jornadas impulsadas por la Dirección de Bienestar Animal</h2>
         <p><strong>Horario:</strong> 12:00 PM - 5:00 PM</p>
+        <span class="estado estado-acabado">Acabado</span>
         <p>Reuniones informativas sobre adopción y cuidado de mascotas.</p>
 
         <div style="margin-top: 15px; border-radius: 10px; overflow: hidden;"></div>
@@ -167,6 +210,7 @@ footer{
     <div class="seccion-card">
         <h2>📍 Jornada en el Parque Canino de la Macroplaza</h2>
         <p><strong>Horario:</strong> 9:00 AM - 1:00 PM</p>
+        <span class="estado estado-acabado">Acabado</span>
         <p>Reune con tu familia y descubre nuevas oportunidades de adopción.</p>
         
         <div style="margin-top: 15px; border-radius: 10px; overflow: hidden;"></div>
@@ -178,6 +222,7 @@ footer{
     <div class="seccion-card">
         <h2>📍 Jornada del Centro de Bienestar, Salud y Rescate Animal</h2>
         <p><strong>Horario:</strong> 11:00 AM - 4:00 PM</p>
+        <span class="estado estado-acabado">Acabado</span>
         <p>Visita el centro y conoce los animales que buscan un hogar.</p>
 
         <div style="margin-top: 15px; border-radius: 10px; overflow: hidden;"></div>
