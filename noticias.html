@@ -94,7 +94,7 @@ nav a:hover { background: white; color: #ff914d; }
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 8px solid #ff7b54;
-    text-decoration: none; /* Quitamos subrayado de enlace */
+    text-decoration: none;
     color: inherit;
     display: block;
     position: relative;
@@ -140,6 +140,99 @@ nav a:hover { background: white; color: #ff914d; }
     line-height: 1.5;
 }
 
+.aviso-whatsapp {
+    width: 85%;
+    max-width: 900px;
+    margin: 25px auto;
+    background: white;
+    border-radius: 20px;
+    padding: 20px 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-left: 8px solid #25d366;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.aviso-whatsapp p {
+    margin: 0;
+    color: #444;
+    line-height: 1.5;
+}
+
+.acciones-whatsapp {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background: #1ebe5d;
+}
+
+.btn-qr {
+    display: inline-block;
+    background: #fff5e4;
+    color: #ff7b54;
+    border: 2px solid #ff914d;
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.popover-qr {
+    display: none;
+    position: absolute;
+    bottom: 120%;
+    right: 0;
+    background: white;
+    padding: 14px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    border: 2px solid #25d366;
+    text-align: center;
+    width: 185px;
+    z-index: 50;
+}
+
+.popover-qr img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 8px auto;
+}
+
+.popover-qr span {
+    display: block;
+    font-size: 0.8rem;
+    color: #555;
+    font-weight: bold;
+}
+
+/* Aparece al acercar el cursor al botón o a la cajita del QR */
+.trigger-qr:hover .popover-qr,
+.trigger-qr:focus-within .popover-qr {
+    display: block;
+}
+
 footer {
     background: #ff914d;
     color: white;
@@ -151,6 +244,10 @@ footer {
 @media(max-width: 768px) {
     nav { flex-direction: column; align-items: center; }
     nav a { width: 85%; text-align: center; }
+    .popover-qr {
+        right: auto;
+        left: 0;
+    }
 }
 </style>
 </head>
@@ -220,6 +317,29 @@ footer {
         </div>
     </a>
 
+</div>
+
+<div class="aviso-whatsapp">
+    <div>
+        <strong>📱 Reportes ciudadanos por WhatsApp</strong>
+        <p>¿Viste una mascota perdida o necesitas reportar un caso en la comunidad?</p>
+    </div>
+    <div class="acciones-whatsapp">
+        <a href="https://wa.me/528781587018?text=Hola%2C%20quiero%20hacer%20un%20reporte%20ciudadano%20en%20Club%20Amigos%20Peludos." 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="btn-whatsapp">
+           💬 Escribir de 8:00 AM a 4:00 PM al 878 158 7018
+        </a>
+
+        <div class="trigger-qr" tabindex="0">
+            <span class="btn-qr">📷 QR WhatsApp</span>
+            <div class="popover-qr">
+                <img src="qr-whatsapp.png" alt="Código QR de WhatsApp para reportes">
+                <span>Escanea para reportar</span>
+            </div>
+        </div>
+    </div>
 </div>
 
 <footer>
