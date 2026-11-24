@@ -64,6 +64,54 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
+.barra-busqueda {
+    width: 85%;
+    max-width: 900px;
+    margin: 25px auto 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.barra-busqueda input {
+    flex: 1;
+    min-width: 220px;
+    padding: 12px 18px;
+    border-radius: 25px;
+    border: 2px solid #ffb26b;
+    background: white;
+    font-size: 0.95rem;
+    outline: none;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+}
+
+.barra-busqueda input:focus {
+    border-color: #ff7b54;
+}
+
+.barra-busqueda button {
+    padding: 12px 18px;
+    border-radius: 25px;
+    border: none;
+    background: #ff914d;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.barra-busqueda button:hover {
+    background: #ff7b54;
+}
+
+#sin-resultados {
+    width: 100%;
+    margin: 8px 0 0 0;
+    color: #666;
+    font-weight: bold;
+}
+
 .noticia {
     width: 85%;
     max-width: 900px;
@@ -131,6 +179,7 @@ footer {
 @media (max-width: 768px) {
     nav { flex-direction: column; align-items: center; }
     nav a { width: 85%; text-align: center; }
+    .barra-busqueda { width: 90%; }
     .noticia { width: 90%; }
     .contenido-perdida { flex-direction: column; }
     .contenido-perdida img { width: 100%; height: 220px; }
@@ -158,6 +207,16 @@ footer {
     <a href="noticias.html">📰 Volver a Noticias</a>
 </nav>
 
+<!-- Filtro de búsqueda en vivo -->
+<div class="barra-busqueda">
+    <input type="text"
+           id="buscador-perdidos"
+           placeholder="🔍 Buscar por nombre, colonia, fecha o teléfono..."
+           oninput="filtrarPerdidos()">
+    <button type="button" onclick="limpiarBusquedaPerdidos()">Limpiar</button>
+    <p id="sin-resultados" style="display: none;">No se encontraron reportes que coincidan con tu búsqueda.</p>
+</div>
+
 <!-- Mascota Perdida 1: Desconocido -->
 <div class="noticia">
     <h2>🔍 Mascota Perdida</h2>
@@ -167,8 +226,8 @@ footer {
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28003.96620975646!2d-100.60242891311647!3d28.67481261836814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865f8b0658d89475%3A0x574d5df6488d4079!2sUnidad%20Deportiva%20Santiago%20V.%20Gonz%C3%A1lez!5e0!3m2!1sen!2smx!4v1794971167689!5m2!1sen!2smx" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <a href="https://petloc.com.mx/en/robo-de-mascotas-el-crimen-que-pocos-denuncian/" title="🐶" style="text-decoration: none; opacity: 0.3; transition: 0.3s; font-size: 18px;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.3'">
-                🐶
-            </a>
+            🐶
+        </a>
     </div>
     <p><strong>Nombre:</strong> Desconocido</p>
     <p><strong>Raza:</strong> Desconocida</p>
@@ -230,6 +289,31 @@ footer {
 <footer>
     🐾 Club Amigos Peludos | Sección de Desaparecidos
 </footer>
+
+<script>
+function filtrarPerdidos() {
+    const texto = document.getElementById("buscador-perdidos").value.toLowerCase().trim();
+    const tarjetas = document.querySelectorAll(".noticia");
+    let visibles = 0;
+
+    tarjetas.forEach(tarjeta => {
+        const contenido = tarjeta.textContent.toLowerCase();
+        if (contenido.includes(texto)) {
+            tarjeta.style.display = "";
+            visibles++;
+        } else {
+            tarjeta.style.display = "none";
+        }
+    });
+
+    document.getElementById("sin-resultados").style.display = visibles === 0 ? "block" : "none";
+}
+
+function limpiarBusquedaPerdidos() {
+    document.getElementById("buscador-perdidos").value = "";
+    filtrarPerdidos();
+}
+</script>
 
 </body>
 </html>
