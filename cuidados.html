@@ -142,6 +142,29 @@ details{
     box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
+.esquina-quienes-somos {
+    position: fixed;
+    top: 14px;
+    right: 18px;
+    z-index: 1000;
+    background: white;
+    color: #ff7b54;
+    text-decoration: none;
+    padding: 9px 16px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+    border: 2px solid #ff914d;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.esquina-quienes-somos:hover {
+    background: #ff7b54;
+    color: white;
+    transform: translateY(-2px);
+}
+
 summary{
     font-weight:bold;
     color:#ff914d;
@@ -169,11 +192,19 @@ footer{
     nav{ flex-direction:column; align-items:center; }
     nav a{ width:85%; text-align:center; }
     .cuidado-card, .faq-seccion{ width:90%; }
+    .esquina-quienes-somos {
+        top: 10px;
+        right: 10px;
+        padding: 7px 12px;
+        font-size: 0.82rem;
+    }
 }
 </style>
 </head>
 
 <body>
+
+    <a href="quienes-somos.html" class="esquina-quienes-somos">ℹ️ Sobre el proyecto</a>
 
 <header>
     <h1>❤️ Cuidados y Bienestar</h1>
