@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiénes Somos | Club Amigos Peludos</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff5e4;
+}
+
+.barra-superior {
+    background: #f3e5d0;
+    border-bottom: 1px solid #e2ceb3;
+    padding: 14px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.marca-sitio {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #5c4033;
+    font-size: 1.25rem;
+}
+
+.enlaces-superiores {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.enlaces-superiores a {
+    text-decoration: none;
+    color: #6d4c3d;
+    font-size: 0.98rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.enlaces-superiores a:hover,
+.enlaces-superiores a.enlace-destacado {
+    color: #c86428;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.ficha-presentacion {
+    width: 85%;
+    max-width: 900px;
+    margin: 35px auto;
+    background: white;
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    border-top: 8px solid #ff7b54;
+}
+
+.ficha-etiqueta {
+    display: inline-block;
+    background: #fff5e4;
+    color: #ff7b54;
+    font-size: 0.78rem;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.ficha-encabezado h2 {
+    margin: 10px 0 4px 0;
+    color: #333;
+    font-size: 1.7rem;
+}
+
+.ficha-encabezado p {
+    margin: 0 0 20px 0;
+    color: #666;
+}
+
+.ficha-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.ficha-dato {
+    background: #fffaf2;
+    border: 1px solid #ffe0b8;
+    border-radius: 14px;
+    padding: 14px 16px;
+}
+
+.ficha-dato small,
+.ficha-descripcion small {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: bold;
+    color: #ff7b54;
+    margin-bottom: 4px;
+    letter-spacing: 0.4px;
+}
+
+.ficha-dato strong {
+    color: #222;
+    font-size: 1rem;
+}
+
+.ficha-descripcion {
+    background: #fffaf2;
+    border: 1px solid #ffe0b8;
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+}
+
+.ficha-descripcion p {
+    margin: 0;
+    color: #444;
+    line-height: 1.5;
+}
+
+.ficha-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.ficha-tags span {
+    background: #fff5e4;
+    color: #555;
+    border: 1px solid #ffd59e;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: bold;
+}
+
+.ficha-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-copiar-ficha {
+    background: #ff914d;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-copiar-ficha:hover {
+    background: #ff7b54;
+}
+
+.estado-copia {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+footer {
+    background: #ff914d;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .barra-superior {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 20px;
+    }
+
+    .enlaces-superiores {
+        gap: 12px 16px;
+    }
+
+    .ficha-presentacion {
+        width: 90%;
+        padding: 20px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="barra-superior">
+    <a href="index.html" class="marca-sitio">
+        <span>🐾</span>
+        <strong>Club Amigos Peludos</strong>
+    </a>
+
+    <nav class="enlaces-superiores">
+        <a href="index.html">Inicio</a>
+        <a href="mascotas.html">Mascotas</a>
+        <a href="galeria.html">Galería</a>
+        <a href="cuidados.html">Cuidados</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="quienes-somos.html" class="enlace-destacado">Quiénes Somos</a>
+    </nav>
+</div>
+
+<section class="ficha-presentacion" id="quienes-somos">
+    <div class="ficha-encabezado">
+        <span class="ficha-etiqueta">📋 TARJETA DE PRESENTACIÓN</span>
+        <h2>Club Amigos Peludos</h2>
+        <p>Datos escolares, autoría y propósito comunitario del sitio</p>
+    </div>
+
+    <div class="ficha-grid">
+        <div class="ficha-dato">
+            <small>PROYECTO / COMUNIDAD</small>
+            <strong>Club Amigos Peludos</strong>
+        </div>
+        <div class="ficha-dato">
+            <small>PROPÓSITO DEL SITIO</small>
+            <strong>Adopción, reportes y bienestar animal</strong>
+        </div>
+        <div class="ficha-dato">
+            <small>AUTOR / DESARROLLADOR</small>
+            <strong>Yaqueline Ontiveros Rodriguez</strong>
+        </div>
+        <div class="ficha-dato">
+            <small>INSTITUCIÓN / ESPECIALIDAD</small>
+            <strong>CBTis 34 · Programación</strong>
+        </div>
+        <div class="ficha-dato">
+            <small>SEMESTRE / MATERIA</small>
+            <strong>5AVP · IAW</strong>
+        </div>
+        <div class="ficha-dato">
+            <small>ZONA COMUNITARIA</small>
+            <strong>Piedras Negras, Coahuila</strong>
+        </div>
+    </div>
+
+    <div class="ficha-descripcion">
+        <small>SOBRE EL PROYECTO</small>
+        <p>
+            Sitio web comunitario enfocado en difundir mascotas perdidas, impulsar la adopción responsable,
+            apoyar campañas médicas y reunir información útil sobre cuidados y eventos para amantes de las mascotas.
+        </p>
+    </div>
+
+    <div class="ficha-tags">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>Adopción Responsable</span>
+        <span>Comunidad Peluda</span>
+    </div>
+
+    <div class="ficha-acciones">
+        <button type="button" class="btn-copiar-ficha" onclick="copiarFichaEscolar()">
+            📋 Copiar ficha del proyecto
+        </button>
+        <span id="estado-copia-ficha" class="estado-copia"></span>
+    </div>
+</section>
+
+<footer>
+    🐾 Club Amigos Peludos | 2026
+</footer>
+
+<script>
+function copiarFichaEscolar() {
+    const textoFicha =
+`Club Amigos Peludos — Tarjeta de Presentación
+Autor: [Tu nombre aquí]
+Institución: CBTis 34 | Especialidad: Programación | Semestre: 5AVP | Materia: CAW
+Propósito: Adopción responsable, reportes de mascotas perdidas y campañas comunitarias.`;
+
+    navigator.clipboard.writeText(textoFicha).then(() => {
+        document.getElementById("estado-copia-ficha").textContent = "¡Ficha copiada!";
+    }).catch(() => {
+        document.getElementById("estado-copia-ficha").textContent = "No se pudo copiar automáticamente.";
+    });
+}
+</script>
+
+</body>
+</html>
