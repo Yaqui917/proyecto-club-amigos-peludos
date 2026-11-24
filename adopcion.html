@@ -53,6 +53,29 @@ nav a:hover{
     color:#ff914d;
 }
 
+.esquina-quienes-somos {
+    position: fixed;
+    top: 14px;
+    right: 18px;
+    z-index: 1000;
+    background: white;
+    color: #ff7b54;
+    text-decoration: none;
+    padding: 9px 16px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+    border: 2px solid #ff914d;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.esquina-quienes-somos:hover {
+    background: #ff7b54;
+    color: white;
+    transform: translateY(-2px);
+}
+
 .contenedor{
     padding:30px;
 }
@@ -146,11 +169,20 @@ footer{
     nav{ flex-direction:column; align-items:center; }
     nav a{ width:85%; text-align:center; }
     .seccion-card{ width:90%; }
+
+    .esquina-quienes-somos {
+        top: 10px;
+        right: 10px;
+        padding: 7px 12px;
+        font-size: 0.82rem;
+    }
 }
 </style>
 </head>
 
 <body>
+
+    <a href="quienes-somos.html" class="esquina-quienes-somos">ℹ️ Sobre el proyecto</a>
 
 <header>
     <h1>🐾 Jornadas de Adopción por Zona</h1>
